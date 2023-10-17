@@ -96,7 +96,7 @@ body {
 .question {
 	position  : relative;
 	max-width : 700px;
-	min-height: 300px;
+	min-height: 350px;
 	height    : auto;
 	width     : 90vw;
 	left      : 50vw;
@@ -110,7 +110,7 @@ body {
 
 .question div {
 	position  : absolute;
-	height    : 90%;
+	height    : 85%;
 	width     : 90%;
 	padding   : 5%;
 

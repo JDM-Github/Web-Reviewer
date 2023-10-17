@@ -128,7 +128,7 @@ body {
 	row-gap   : 20px;
 	position  : relative;
 	max-width : 700px;
-	min-height: 300px;
+	min-height: 350px;
 	height    : auto;
 	width     : 90vw;
 	left      : 50vw;
@@ -166,6 +166,7 @@ body {
 	transform : translateX(-50%);
 
 	outline         : none;
+	border          : none;
 	border-radius   : 20px;
 	text-indent     : 20px;
 	background-color: var(--choice-color);
@@ -192,7 +193,9 @@ body {
 	font-family    : 'HandMade';
 	align-items    : center;
 	justify-content: center;
+	text-align: center;
 	cursor: pointer;
+	border: 2px solid transparent;
 }
 
 .selection div:hover,
@@ -295,7 +298,7 @@ body {
 
 @media (max-width: 600px) {
 	:root {
-		--font-size : 1.5rem;
+		--font-size : 1.3rem;
 	}
 	.design {
 		border-radius: 10%;

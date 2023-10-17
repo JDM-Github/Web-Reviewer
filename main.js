@@ -1,5 +1,5 @@
 let number = -1;
-
+let maxNumber = 50;
 let reviewMode = false;
 let isIdentification = false;
 
@@ -74,6 +74,8 @@ const questions = [
 		["laws", "treaty", "biography", "documents", "news"]],
 	["", "Enumeration: Give all Sources of Historical Data. NOT WRITTEN (Note: Separated Comma and space. Ex.'test, test2')",
 		["corpse", "materials", "settlement", "environment", "customs"]],
+	["", "Enumeration: Give all Social Sciences. (Note: Separated Comma and space. Ex.'test, test2')",
+		["sociology", "social science", "archaeology", "cartography", "psychology", "economics", "geography", "linguistics", "chemical and biology"]],
 
 	[-1, "The basis of data is only through written documents and also the things that have to do with the lives of people.", false],
 	[-1, "In early times, recording history is important to the rulers of government to justify their works.", true],
@@ -82,18 +84,20 @@ const questions = [
 	[-1, "Sociology is one of branches of Social Sciences"    , true],
 	[-1, "Archaeology is one of branches of Social Sciences"  , true],
 	[-1, "Pysiological is one of branches of Social Sciences" , false],
-	[-1, "Psychology is one of branches of Social Sciences", true],
-	[-1, "Geography is one of branches of Social Sciences", true],
-	[-1, "Chemistry is one of branches of Social Sciences", true],
-	[-1, "Biology is one of branches of Social Sciences", true],
-	[-1, "Economics is one of branches of Social Sciences", true],
-	[-1, "History is one of branches of Social Sciences", false],
-	[-1, "Linguistics is one of branches of Social Sciences", true],
-	[-1, "historical sources can be classified as primary and secondary sources.", true],
+	[-1, "Psychology is one of branches of Social Sciences"   , true],
+	[-1, "Geography is one of branches of Social Sciences"    , true],
+	[-1, "Chemistry is one of branches of Social Sciences"    , true],
+	[-1, "Biology is one of branches of Social Sciences"      , true],
+	[-1, "Economics is one of branches of Social Sciences"    , true],
+	[-1, "History is one of branches of Social Sciences"      , false],
+	[-1, "Linguistics is one of branches of Social Sciences"  , true],
+	[-1, "historical sources can be classified as primary and secondary sources."  , true],
 	[-1, "Historical Event and Philippine Artifact is considered secondary sources", false],
 	[-1, "A secondary source provide a second-hand perspective or commentary on the original information.", true],
 	[-1, "External criticism applies 'science to a document.'", true],
+	[-1, "External criticism concerned with the honesty and factuality of the confirmation by taking into consideration the creator of the source, its unique situation, the motivation behind its creation, the information which educated it, and its planned reason among others Inner feedback searches inside the information itself to endeavor to decide truth- realities and 'sensible' understanding.", false],
 
+	["", "It incorporates taking a glimpse at the evident or conceivable thought processes of the individual giving the information.", "internal"],
 	["", "____ criticism, also called lower criticism, is the practice of verifying the authenticity of evidence by examining its physical characteristics.", "external"],
 	["", "____ is a continuing process and written in chronological order of events and its importance to our society.", "history"],
 	["", "____ criticism or higher criticism is concerned with the examination of the honesty of the proof.", "internal"],
@@ -102,6 +106,7 @@ const questions = [
 	["", "A ____ source works that analyze, interpret, or summarize primary sources or existing research.", "secondary"],
 	["", "Greek word “historia” which means “to _____ or look into”.", "search"],
 	["", "The history or story of a society or group of people is rooted from their myths, epics, ___ and rituals", "folklores"],
+
 	["", "One of the branches of Social Science. The science of society, social institutions and social relationships, the systematic study of the development, structure, interaction, and collective behavior of organized groups of human beings", "sociology"],
 	["", "One of the branches of Social Science. A branch of Science that deals with the institutions and functioning of human society and with the interpersonal relationships of individuals as members of society.", "social science"],
 	["", "One of the branches of Social Science. The scientific study of material remains of past human life and activities", "archaeology"],
@@ -221,10 +226,10 @@ function updateQuestionaire() {
 			else isIdentification = true;
 		}
 	}
-	qT.textContent = "Question " + (number+1);
- 
+
+	qT.textContent        = "Question " + (number+1);
 	prevDiv.style.display = (number - 1 < 0) ? "none" : "block";
-	nextDiv.textContent = (number + 1 >= questions.length) ? "FINISH" : "NEXT";
+	nextDiv.textContent   = (number + 1 >= questions.length || number + 1 >= maxNumber) ? "FINISH" : "NEXT";
 }
 
 function arraysAreEqual(arr1, arr2) {
@@ -241,21 +246,6 @@ function arraysAreEqual(arr1, arr2) {
 	}
 	return true;
 }
-
-// function arraysAreEqual(arr1, arr2) {
-// 	if (arr1.length != arr2.length) {
-// 		return false;
-// 	}
-// 	const sortedArr1 = arr1.slice().sort();
-// 	const sortedArr2 = arr2.slice().sort();
-
-// 	for (let i = 0; i < sortedArr1.length; i++) {
-// 		if (sortedArr1[i].toLowerCase() != sortedArr2[i].toLowerCase()) {
-// 			return false;
-// 		}
-// 	}
-// 	return true;
-// }
 
 function finish() {
 	for (let i = 0; i < questions.length; i++) {
@@ -332,7 +322,7 @@ function next() {
 		questions[number][0] = identiFyDiv.value;
 		isIdentification = false;
 	}
-	if (number + 1 >= questions.length) {
+	if (number + 1 >= questions.length || number + 1 >= maxNumber) {
 		finish();
 		return;
 	}

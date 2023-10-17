@@ -15,8 +15,7 @@ numToLetter.set( 2, "C");
 numToLetter.set( 3, "D");
 
 const questions = [
-	[-1, ["____ pertains to study of the written events significant to a particular society.", "A"],
-		"History", "Greek", "Science", "Society"],
+	[-1, ["____ pertains to study of the written events significant to a particular society.", "A"], "History", "Greek", "Science", "Society"],
 	["", "Greek word “historia” which means “to _____ or look into”.", "search"],
 	[-1, ["All of this is a reason on why studying history is important EXCEPT", "C"],
 		"The stories of past about people and things in the world we live provide valuable lessons to us.",
@@ -31,8 +30,7 @@ const questions = [
 		"myths, epics, folklores and rituals"
 	],
 	["", "The history or story of a society or group of people is rooted from their myths, epics, ___ and rituals", "folklores"],
-	[-1, "The basis of data is only through written documents and also the things that have to do with the lives of people.", false],
-	[-1, "In early times, recording history is important to the rulers of government to justify their works.", true],
+	
 	[-1, ["Lately, the basis of data is not only through written documents but also the things that have to do with the lives of people. Some of these things are their ____.", "A"],
 		"materials, corpse, settlement, plants, picture, computer text files and environment.",
 		"materials, corpse, documents, letters, diaries and environment.",
@@ -43,13 +41,16 @@ const questions = [
 		["laws", "treaty", "biography", "documents", "news"]],
 	["", "Enumeration: Give all Sources of Historical Data. NOT WRITTEN (Note: Separated Comma and space. Ex.'test, test2')",
 		["corpse", "materials", "settlement", "environment", "customs"]],
+
+	[-1, "The basis of data is only through written documents and also the things that have to do with the lives of people.", false],
+	[-1, "In early times, recording history is important to the rulers of government to justify their works.", true],
 	[-1, "The study of history as a discipline or a science has its advancement during 1800.", false],
 	[-1, "Today, scientists believe that it is impossible to do because the description of the past events used by the historian comes from his/her own understanding and imagination that is scrutinized and connected to the different data collected.", true],
 	[-1, "Sociology is one of branches of Social Sciences", true],
 	[-1, "Archaeology is one of branches of Social Sciences", true],
 	[-1, "Pysiological is one of branches of Social Sciences", false],
-	[-1, "Psychology is one of branches of Social Sciences", false],
-	[-1, "Geography is one of branches of Social Sciences", false],
+	[-1, "Psychology is one of branches of Social Sciences", true],
+	[-1, "Geography is one of branches of Social Sciences", true],
 	[-1, "Chemistry is one of branches of Social Sciences", true],
 	[-1, "Biology is one of branches of Social Sciences", true],
 	[-1, "Economics is one of branches of Social Sciences", true],
@@ -107,36 +108,36 @@ const questions = [
 	["", "____ criticism or higher criticism is concerned with the examination of the honesty of the proof.", "internal"],
 ];
 
-const backResult = document.querySelector(".backresult");
-const retryDiv = document.querySelector(".result .buttons .resultRetry");
-retryDiv.addEventListener('click', retry);
-const reviewDiv = document.querySelector(".result .buttons .resultReview");
+const backResult = document.querySelector(`.backresult`);
+const retryDiv   = document.querySelector(`.result .buttons .resultRetry`);
+const reviewDiv  = document.querySelector(`.result .buttons .resultReview`);
+
+retryDiv .addEventListener('click', retry   );
 reviewDiv.addEventListener('click', doReview);
 
-const qQ = document.querySelector(".question div");
-const qA = document.querySelector(`.selection [selection="A"]`);
-const qB = document.querySelector(`.selection [selection="B"]`);
-const qC = document.querySelector(`.selection [selection="C"]`);
-const qD = document.querySelector(`.selection [selection="D"]`);
-const qT = document.querySelector(`.topNav .questionDiv`);
+const qQ     = document.querySelector(`.question div`             );
+const qA     = document.querySelector(`.selection [selection="A"]`);
+const qB     = document.querySelector(`.selection [selection="B"]`);
+const qC     = document.querySelector(`.selection [selection="C"]`);
+const qD     = document.querySelector(`.selection [selection="D"]`);
+const qT     = document.querySelector(`.topNav .questionDiv`      );
 
 const qTrue  = document.querySelector(`.true-false [selection="True"]`);
 const qFalse = document.querySelector(`.true-false [selection="False"]`);
 
-const selectionDiv = document.querySelector(".selection");
-const trueFalseDiv = document.querySelector(".true-false");
-const identiFyDiv  = document.querySelector(".identification");
-
-const totalDiv = document.querySelector(".result .resultTxt");
-const incDiv   = document.querySelector(".result .resultNoInc");
-const corDiv   = document.querySelector(".result .resultNoCor");
+const selectionDiv = document.querySelector(`.selection`          );
+const trueFalseDiv = document.querySelector(`.true-false`         );
+const identiFyDiv  = document.querySelector(`.identification`     );
+const totalDiv     = document.querySelector(`.result .resultTxt`  );
+const incDiv       = document.querySelector(`.result .resultNoInc`);
+const corDiv       = document.querySelector(`.result .resultNoCor`);
 
 const nextDiv = document.querySelector(".topNav .nextDiv")
 nextDiv.addEventListener('click', () => { next(); });
 const prevDiv = document.querySelector(".topNav .prevDiv")
 prevDiv.addEventListener('click', () => { prev(); });
 
-const arrayChoice =  [qA, qB, qC, qD];
+const arrayChoice    =  [qA, qB, qC, qD];
 const arrayTrueFalse = [qTrue, qFalse];
 
 for (let i = 0; i < arrayChoice.length; i++) { arrayChoice[i].addEventListener('click', () => { clickFunc(arrayChoice[i], i); }); }

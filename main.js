@@ -1,7 +1,8 @@
 let number = -1;
-let maxNumber = 50;
+let maxNumber = 99;
 let reviewMode = false;
 let isIdentification = false;
+let isEnumeration = false;
 
 let totalScore = 0;
 let numOfScoreInc = 0;
@@ -70,11 +71,11 @@ const questions = [
 		"superficial"
 	],
 
-	["", "Enumeration: Give all Sources of Historical Data. WRITTEN (Note: Separated Comma and space. Ex.'test, test2')",
+	["", "Enumeration: Give all Sources of Historical Data. WRITTEN",
 		["laws", "treaty", "biography", "documents", "news"]],
-	["", "Enumeration: Give all Sources of Historical Data. NOT WRITTEN (Note: Separated Comma and space. Ex.'test, test2')",
+	["", "Enumeration: Give all Sources of Historical Data. NOT WRITTEN",
 		["corpse", "materials", "settlement", "environment", "customs"]],
-	["", "Enumeration: Give all Social Sciences. (Note: Separated Comma and space. Ex.'test, test2')",
+	["", "Enumeration: Give all Social Sciences.",
 		["sociology", "social science", "archaeology", "cartography", "psychology", "economics", "geography", "linguistics", "chemical and biology"]],
 
 	[-1, "The basis of data is only through written documents and also the things that have to do with the lives of people.", false],
@@ -137,6 +138,7 @@ const qFalse = document.querySelector(`.true-false [selection="False"]`);
 
 const selectionDiv = document.querySelector(`.selection`          );
 const trueFalseDiv = document.querySelector(`.true-false`         );
+const enumerateDiv = document.querySelector(`.enumeration`        );
 const identiFyDiv  = document.querySelector(`.identification`     );
 const totalDiv     = document.querySelector(`.result .resultTxt`  );
 const incDiv       = document.querySelector(`.result .resultNoInc`);
@@ -182,6 +184,7 @@ function updateQuestionaire() {
 	selectionDiv.style.display = "none";
 	trueFalseDiv.style.display = "none";
 	identiFyDiv.style.display  = "none";
+	enumerateDiv.style.display = "none";
 
 	if (questions[number].length == 6) {
 		selectionDiv.style.display = "grid";
@@ -218,6 +221,38 @@ function updateQuestionaire() {
 				else qFalse.style.backgroundColor = "#77ff43";
 			}
 
+		} else if (Array.isArray(questions[number][2])) {
+			enumerateDiv.style.display = "grid";
+			qQ.textContent = questions[number][1];
+
+			for (let i = 0; i < enumerateDiv.children.length; i++) {
+				const child = enumerateDiv.children[i];
+				child.style.display = "none";
+				child.value = "";
+			}
+			for (let i = 0; i < questions[number][2].length; i++) {
+				const child = enumerateDiv.children[i];
+				child.style.display = "block";
+			}
+
+			let enumAnswer = questions[number][0].split(", ");
+			for (let i = 0; i < enumAnswer.length; i++) {
+				const child = enumerateDiv.children[i];
+				child.value = enumAnswer[i];
+			}
+			if (reviewMode) {
+				const newArray = getRightArray(questions[number][2], []);
+				for (let i = 0; i < newArray.length; i++) {
+					const child = enumerateDiv.children[i];
+					child.value = newArray[i];
+
+					if (newArray[i].indexOf(":") != -1)
+						child.style.backgroundColor = "#77ff43";
+					else child.style.backgroundColor = "#FF69CE";
+				}
+			}
+			else isEnumeration = true;
+
 		} else {
 			identiFyDiv.style.display = "block";
 			identiFyDiv.value = `${questions[number][0]}`;
@@ -233,18 +268,40 @@ function updateQuestionaire() {
 }
 
 function arraysAreEqual(arr1, arr2) {
-	if (arr1.length != arr2.length) {
-		return false;
-	}
+	if (arr1.length != arr2.length) return false;
+
 	const sortedArr1 = arr1.slice().sort();
 	const sortedArr2 = arr2.slice().sort();
 
-	for (let i = 0; i < sortedArr1.length; i++) {
-		if (sortedArr1[i].toLowerCase() != sortedArr2[i].toLowerCase()) {
+	for (let i = 0; i < sortedArr1.length; i++)
+		if (sortedArr1[i].toLowerCase() != sortedArr2[i].toLowerCase())
 			return false;
+
+	return true;
+}
+
+function getRightArray(arr1, arr2) {
+
+	const resultAns = []
+	const sortedArr1 = arr1.slice().sort();
+	const sortedArr2 = arr2.slice().sort();
+
+	for (let i = 0; i < sortedArr2.length; i++) {
+		let isFound = false, j = 0;
+		for (; j < sortedArr1.length; j++) {
+			if (sortedArr2[i].toLowerCase() == sortedArr1[j].toLowerCase()) {
+				resultAns.push(sortedArr2[i]);
+  				sortedArr1.splice(j, 1);
+  				isFound = true;
+				break;
+			}
+		}
+		if (!isFound) {
+			resultAns.push(`${sortedArr2[i]} : ${sortedArr1[j-1]}`);
+			sortedArr1.splice(j-1, 1);
 		}
 	}
-	return true;
+	return resultAns.concat(sortedArr1);;
 }
 
 function finish() {
@@ -322,6 +379,15 @@ function next() {
 		questions[number][0] = identiFyDiv.value;
 		isIdentification = false;
 	}
+	else if (!reviewMode && isEnumeration) {
+		const newValue = [];
+		for (let i = 0; i < questions[number][2].length; i++) {
+			const child = enumerateDiv.children[i];
+			newValue.push(child.value);
+		}
+		questions[number][0] = newValue.join(", ");
+		isEnumeration = false;
+	}
 	if (number + 1 >= questions.length || number + 1 >= maxNumber) {
 		finish();
 		return;
@@ -336,6 +402,15 @@ function prev() {
 	if (!reviewMode && isIdentification) {
 		questions[number][0] = identiFyDiv.value;
 		isIdentification = false;
+
+	} else if (!reviewMode && isEnumeration) {
+		const newValue = [];
+		for (let i = 0; i < questions[number][2].length; i++) {
+			const child = enumerateDiv.children[i];
+			newValue.push(child.value);
+		}
+		questions[number][0] = newValue.join(", ");
+		isEnumeration = false;
 	}
 	number--;
 	updateQuestionaire();

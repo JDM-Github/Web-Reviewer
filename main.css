@@ -3,36 +3,11 @@
     src         : url('Autum Bright.ttf') format('truetype');
 }
 
-:root {
-	--background        : black;
-	--questionaire-color: #676766;
-	--choice-color      : #454545;
-
-	--choice-color-hover: #FF69CE;
-	--design-color      : #FF69CE;
-	--nav-color         : #FE017F;
-
-
-	--font-size         : 2rem;
-}
-
-[theme="bajoy"] {
-	--background        : #040405dd;
-	--questionaire-color: #ffffff;
-	--choice-color      : #FF69CE;
-
-	--choice-color-hover: #ffffff;
-	--design-color      : #FF69CEcc;
-	--nav-color         : #FF69CE;
-}
-
 body {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
 	background-color: var(--background);
-
-	user-scalable: no;
 }
 
 .design {
@@ -45,81 +20,6 @@ body {
 
 	border-radius: 30%;
 	transform: translateY(-50%);
-}
-
-.topNav {
-	position  : relative;
-	max-width : 700px;
-	height    : 30px;
-	width     : 90vw;
-	left      : 50vw;
-	margin-top: 30px;
-
-	font-size: ;
-	border-radius   : 20px;
-	transform       : translateX(-50%);
-}
-
-.topNav div {
-	position: absolute;
-	display        : flex;
-	font-size      : var(--font-size);
-	font-family    : 'HandMade';
-	align-items    : center;
-	justify-content: center;
-	text-align     : center;
-
-	color: white;
-	text-shadow: 0px 0px 5px white;
-}
-
-.topNav .questionDiv {
-	margin-left: 10px;
-}
-.topNav .nextDiv {
-	left: calc(100% - 14%);
-	width: 14%;
-	cursor: pointer;
-}
-.topNav .prevDiv {
-	left: calc(100% - 28%);
-	width: 14%;
-	cursor: pointer;
-}
-
-.topNav .nextDiv:hover,
-.topNav .prevDiv:hover {
-	text-shadow: 0px 0px 5px #FE017F;
-	color: #FE017F;
-}
-
-.question {
-	position  : relative;
-	max-width : 700px;
-	min-height: 350px;
-	height    : auto;
-	width     : 90vw;
-	left      : 50vw;
-	margin-top: 10px;
-
-	border-radius   : 20px;
-
-	transform       : translateX(-50%);
-	background-color: var(--questionaire-color);
-}
-
-.question div {
-	position  : absolute;
-	height    : 85%;
-	width     : 90%;
-	padding   : 5%;
-
-	display        : flex;
-	font-size      : var(--font-size);
-	font-family    : 'HandMade';
-	align-items    : center;
-	justify-content: center;
-	text-align     : center;
 }
 
 .selection {
@@ -155,6 +55,45 @@ body {
 	display: none;
 }
 
+.enumeration {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 20px;
+	row-gap   : 20px;
+	position  : relative;
+	max-width : 700px;
+	height    : auto;
+	width     : 90vw;
+	left      : 50vw;
+
+	margin-top: 20px;
+	transform : translateX(-50%);
+	display: none;
+}
+
+.enumeration input {
+	position  : relative;
+	min-height: 50px;
+	width     : auto;
+	height    : auto;
+
+	outline         : none;
+	border          : none;
+	border-radius   : 20px;
+	text-indent     : 5px;
+	background-color: var(--choice-color);
+
+	display        : flex;
+	font-size      : var(--font-size);
+	font-family    : 'HandMade';
+	align-items    : center;
+	justify-content: center;
+	caret-color    : white;
+	border: 2px solid transparent;
+
+	display: none;
+}
+
 .identification {
 	position  : relative;
 	max-width : 700px;
@@ -170,6 +109,7 @@ body {
 	border-radius   : 20px;
 	text-indent     : 20px;
 	background-color: var(--choice-color);
+	border: 2px solid transparent;
 
 	display        : flex;
 	font-size      : var(--font-size);
@@ -180,9 +120,14 @@ body {
 	display: none;
 }
 
+.identification::selection,
+.enumeration input::selection {
+	background-color: white;
+  	color: var(--choice-color);
+}
+
 .selection div,
 .true-false div {
-
 	position        : relative;
 	border-radius   : 20px;
 	height          : auto;
@@ -197,9 +142,10 @@ body {
 	cursor: pointer;
 	border: 2px solid transparent;
 }
-
 .selection div:hover,
-.true-false div:hover {
+.true-false div:hover,
+.identification:hover,
+.enumeration input:hover {
 	box-shadow: 0px 0px 10px var(--choice-color-hover);
 	border: 2px solid var(--choice-color-hover);
 }
@@ -303,4 +249,12 @@ body {
 	.design {
 		border-radius: 10%;
 	}
+}
+
+.uncopyable {
+	user-select           : none;
+	-moz-user-select      : none;
+	-webkit-user-select   : none;
+	-ms-user-select       : none;
+	-webkit-touch-callout : none;
 }

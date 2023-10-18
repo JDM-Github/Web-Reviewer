@@ -1,0 +1,22 @@
+:root {
+	--background        : black;
+	--questionaire-color: #676766;
+	--choice-color      : #454545;
+
+	--choice-color-hover: #FF69CE;
+	--design-color      : #FF69CE;
+	--nav-color         : #FE017F;
+
+
+	--font-size         : 2rem;
+}
+
+[theme="bajoy"] {
+	--background        : #040405dd;
+	--questionaire-color: #ffffff;
+	--choice-color      : #FF69CE;
+
+	--choice-color-hover: #ffffff;
+	--design-color      : #FF69CEcc;
+	--nav-color         : #FF69CE;
+}

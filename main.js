@@ -1,3 +1,5 @@
+import { allCourseQuiz } from "./js/firebase.js";
+
 let number = -1;
 let maxNumber = 99;
 let reviewMode = false;
@@ -15,108 +17,10 @@ numToLetter.set( 1, "B");
 numToLetter.set( 2, "C");
 numToLetter.set( 3, "D");
 
+// const questions = allCourseQuiz[0];
+// console.log(allCourseQuiz);
 const questions = [
-	[-1, ["____ pertains to study of the written events significant to a particular society.", "A"],
-		"History",
-		"Greek",
-		"Science",
-		"Society"
-	],
-	[-1, ["All of this is a reason on why studying history is important EXCEPT", "C"],
-		"The stories of past about people and things in the world we live provide valuable lessons to us.",
-		"In studying history, we can learn various ways of studying and researching in the social sciences. It can help us learn different ways of discovering new knowledge.",
-		"History can be used to examine and forecast the things in the environment and society. Greek can teach us to appreciate culture, love, and respect other people in the world.",
-		"History is an eye opener to understand our culture, language and society. History may arouse patriotic, humanitarian nature in people.",
-	],
-	[-1, ["The history or story of a society or group of people is rooted from their ____", "D"],
-		"myths, science, and rituals",
-		"myths, legends, and traditions",
-		"myths, tales, and customs",
-		"myths, epics, folklores and rituals"
-	],
-	[-1, ["Lately, the basis of data is not only through written documents but also the things that have to do with the lives of people. Some of these things are their ____.", "A"],
-		"materials, corpse, settlement, plants, picture, computer text files and environment.",
-		"materials, corpse, documents, letters, diaries and environment.",
-		"materials, corpse, artifacts, paintings and environment.",
-		"materials, corpse, books, manuscripts, scrolls and environment.",
-	],
-	[-1, ["The historian’s most important research tools are ____ sources.", "C"],
-		"primary",
-		"secondary",
-		"historical",
-		"archaeological",
-	],
-	[-1, ["Definition of Criticism of Historical Sources", "A"],
-		"Historical evidence is derived from historical sources by the process of criticism which is of two types – external and internal criticism.",
-		"The assessment of artistic quality in historical sources",
-		"Analysis of historical events",
-		"Evaluation of political aspects in historical sources",
-	],
-	[-1, ["Primary sources are usually defined as ____ or participants in past events.", "D"],
-		"documents and letters from historians",
-		"fictional accounts of historical events",
-		"historical photographs",
-		"first-hand information or data generated from actual witnesses"
-	],
-	[-1, ["They include letters, diaries, journals, newspapers, photographs, and other immediate accounts. The interpretation and evaluation of these sources becomes the basis for research.", "D"],
-		"secondary sources",
-		"historical novels and poems",
-		"audio recordings and films",
-		"primary sources",
-	],
-	[-1, ["The historian should be able to conduct an ___ criticism of the sources especially primary resources which can age in centuries.", "B"],
-		"in-depth",
-		"external and internal",
-		"critical and detailed",
-		"superficial"
-	],
-
-	["", "Enumeration: Give all Sources of Historical Data. WRITTEN",
-		["laws", "treaty", "biography", "documents", "news"]],
-	["", "Enumeration: Give all Sources of Historical Data. NOT WRITTEN",
-		["corpse", "materials", "settlement", "environment", "customs"]],
-	["", "Enumeration: Give all Social Sciences.",
-		["sociology", "social science", "archaeology", "cartography", "psychology", "economics", "geography", "linguistics", "chemical and biology"]],
-
-	[-1, "The basis of data is only through written documents and also the things that have to do with the lives of people.", false],
-	[-1, "In early times, recording history is important to the rulers of government to justify their works.", true],
-	[-1, "The study of history as a discipline or a science has its advancement during 1800.", false],
-	[-1, "Today, scientists believe that it is impossible to do because the description of the past events used by the historian comes from his/her own understanding and imagination that is scrutinized and connected to the different data collected.", true],
-	[-1, "Sociology is one of branches of Social Sciences"    , true],
-	[-1, "Archaeology is one of branches of Social Sciences"  , true],
-	[-1, "Pysiological is one of branches of Social Sciences" , false],
-	[-1, "Psychology is one of branches of Social Sciences"   , true],
-	[-1, "Geography is one of branches of Social Sciences"    , true],
-	[-1, "Chemistry is one of branches of Social Sciences"    , true],
-	[-1, "Biology is one of branches of Social Sciences"      , true],
-	[-1, "Economics is one of branches of Social Sciences"    , true],
-	[-1, "History is one of branches of Social Sciences"      , false],
-	[-1, "Linguistics is one of branches of Social Sciences"  , true],
-	[-1, "historical sources can be classified as primary and secondary sources."  , true],
-	[-1, "Historical Event and Philippine Artifact is considered secondary sources", false],
-	[-1, "A secondary source provide a second-hand perspective or commentary on the original information.", true],
-	[-1, "External criticism applies 'science to a document.'", true],
-	[-1, "External criticism concerned with the honesty and factuality of the confirmation by taking into consideration the creator of the source, its unique situation, the motivation behind its creation, the information which educated it, and its planned reason among others Inner feedback searches inside the information itself to endeavor to decide truth- realities and 'sensible' understanding.", false],
-
-	["", "It incorporates taking a glimpse at the evident or conceivable thought processes of the individual giving the information.", "internal"],
-	["", "____ criticism, also called lower criticism, is the practice of verifying the authenticity of evidence by examining its physical characteristics.", "external"],
-	["", "____ is a continuing process and written in chronological order of events and its importance to our society.", "history"],
-	["", "____ criticism or higher criticism is concerned with the examination of the honesty of the proof.", "internal"],
-	["", "These are also sources produced at same time as the event, period, or subject being studied. These materials are often located in the ____ Collections of a library, rather than in the general collection.", "special"],
-	["", "A ____ source typically refers to original, firsthand information or data related to a specific topic or event. It's the unmediated source that provides direct evidence or insights.", "primary"],
-	["", "A ____ source works that analyze, interpret, or summarize primary sources or existing research.", "secondary"],
-	["", "Greek word “historia” which means “to _____ or look into”.", "search"],
-	["", "The history or story of a society or group of people is rooted from their myths, epics, ___ and rituals", "folklores"],
-
-	["", "One of the branches of Social Science. The science of society, social institutions and social relationships, the systematic study of the development, structure, interaction, and collective behavior of organized groups of human beings", "sociology"],
-	["", "One of the branches of Social Science. A branch of Science that deals with the institutions and functioning of human society and with the interpersonal relationships of individuals as members of society.", "social science"],
-	["", "One of the branches of Social Science. The scientific study of material remains of past human life and activities", "archaeology"],
-	["", "One of the branches of Social Science. The science of art of making maps", "cartography"],
-	["", "One of the branches of Social Science. The science of the mental or behavioral characteristics of an individual or group the study of mind and behavioral in relation to a particular field of knowledge or activity.", "psychology"],
-	["", "One of the branches of Social Science. A social science concerned chiefly with description and analysis of the productions, distribution and consumptions of goods and services", "economics"],
-	["", "One of the branches of Social Science. A science that deals with the description, distribution, and interaction of the diverse physical, biological, and cultural features of the earth's surface.", "geography"],
-	["", "One of the branches of Social Science. The study of human speech including the units, nature, sturcture and modification of language", "linguistics"],
-	["", "One of the branches of Social Science. This two can also help us study about our history. It's a great help in studying the history of validation if the fragments is in humans and not animals", "chemistry and biology"],
+	
 ];
 
 const backResult = document.querySelector(`.backresult`);
@@ -188,7 +92,7 @@ function updateQuestionaire() {
 
 	if (questions[number].length == 6) {
 		selectionDiv.style.display = "grid";
-		if ( questions[number][0] >= 0)			
+		if ( questions[number][0] >= 0)
 			arrayChoice[questions[number][0]].style.backgroundColor = "#FE017F";
 
 		qQ.textContent = questions[number][1][0];
@@ -265,6 +169,7 @@ function updateQuestionaire() {
 	qT.textContent        = "Question " + (number+1);
 	prevDiv.style.display = (number - 1 < 0) ? "none" : "block";
 	nextDiv.textContent   = (number + 1 >= questions.length || number + 1 >= maxNumber) ? "FINISH" : "NEXT";
+	checkScrollable();
 }
 
 function arraysAreEqual(arr1, arr2) {
@@ -423,8 +328,20 @@ function shuffleArray(array) {
 	}
 }
 
+function checkScrollable() {
+	const body = document.body;
+	if (body.scrollHeight > window.innerHeight) {
+		document.querySelector(".credits").style.position = "relative";
+	} else {
+		document.querySelector(".credits").style.position = "fixed";
+	}
+}
+
 function main(argument) {
 	shuffleArray(questions);
 	next();
+
+	window.addEventListener("load", checkScrollable);
+	window.addEventListener("resize", checkScrollable);
 }
 main();

@@ -30,18 +30,14 @@
 	margin-left: 10px;
 }
 .topNav .nextDiv {
-	left: calc(100% - 14%);
-	width: 14%;
+	left: calc(100% - 12%);
+	width: 12%;
 	cursor: pointer;
-	margin-left: 10px;
-	margin-right: 10px;
 }
 .topNav .prevDiv {
-	left: calc(100% - 28%);
-	width: 14%;
+	left: calc(100% - 24% - 10px);
+	width: 12%;
 	cursor: pointer;
-	margin-left: 10px;
-	margin-right: 10px;
 }
 
 .topNav .nextDiv:hover,

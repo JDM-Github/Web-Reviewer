@@ -1,6 +1,6 @@
 @font-face {
-    font-family : 'HandMade';
-    src         : url('Autum Bright.ttf') format('truetype');
+	font-family : 'HandMade';
+	src         : url('Autum Bright.ttf') format('truetype');
 }
 
 body {
@@ -10,7 +10,36 @@ body {
 	background-color: var(--background);
 }
 
-.design {
+#loading-screen {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+
+	z-index: 9999;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+	color: white;
+	font-family: 'Nexa';
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.spinner {
+	border         : 4px solid rgba(255, 255, 255, 0.3);
+	border-top     : 4px solid #3498db;
+	border-radius  : 50%;
+	width          : 40px;
+	height         : 40px;
+	animation: spin 1s linear infinite;
+}
+
+.design, .design2 {
 	position: absolute;
 	width: 100vw;
 	height: 80vh;
@@ -20,6 +49,17 @@ body {
 
 	border-radius: 30%;
 	transform: translateY(-50%);
+}
+.design2 {
+	transform: translateY(-40%);
+}
+
+.rectangle {
+	position: absolute;
+	width: 100%;
+	height: 20vh;
+	bottom: 0;
+	background-color: red;
 }
 
 .selection {
@@ -73,9 +113,8 @@ body {
 
 .enumeration input {
 	position  : relative;
-	min-height: 50px;
-	width     : auto;
 	height    : auto;
+	width     : 98%;
 
 	outline         : none;
 	border          : none;
@@ -123,7 +162,7 @@ body {
 .identification::selection,
 .enumeration input::selection {
 	background-color: white;
-  	color: var(--choice-color);
+	color: var(--choice-color);
 }
 
 .selection div,
@@ -230,10 +269,12 @@ body {
 }
 
 .credits {
-	position  : relative;
-	height    : 10px;
+	position  : fixed;
+	height    : 50px;
 	width     : 100vw;
+	bottom    : 0;
 	margin-top: 100px;
+	background-color: #FE017F;
 }
 
 @media (max-width: 800px) {
@@ -246,6 +287,10 @@ body {
 	:root {
 		--font-size : 1.2rem;
 	}
+	.result div,
+	.result .buttons div {
+		font-size: calc(var(--font-size) + 0.2rem);
+	}
 	.design {
 		border-radius: 10%;
 	}
@@ -257,4 +302,9 @@ body {
 	-webkit-user-select   : none;
 	-ms-user-select       : none;
 	-webkit-touch-callout : none;
+}
+
+@keyframes spin {
+	0%   { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }

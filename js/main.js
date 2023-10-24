@@ -25,11 +25,11 @@ const questions = [
 	["", "It is a blueprint or template of an object that contains variables for storing data and functions to perform operations on the data", "class"],
 	["", "____ is the most recent concept among programming paradigm and still means different things to different people. (Answer in Acronym).", "OOP"],
 	["", "An access modifier that will make all attributes/method available on all files and class.", "public"],
-	["", "An access modifier that will make attributes/method only available when inherited on own by.", "protected"],
-	["", "An access modifier that will make attributes/method only if own by.", "private"],
-	["", "It is represented by fields/ properties/ attributes of an object.", "states"],
+	["", "An access modifier that will make attributes/method only available when inherited or own by.", "protected"],
+	["", "An access modifier that will make attributes/method only available if own by.", "private"],
+	["", "It is represented by fields/ properties/ attributes of an object.", "state"],
 	["", "It gives a unique name to an object and enables one object to interact with other objects", "identity"],
-	["", "It is represented by methods of an object. It also reflects the response of an object with other objects.", "behvaior"],
+	["", "It is represented by methods of an object.", "behavior"],
 	["", "Named is formed of multiple words that are joined together as a single word with the first letter of each of multiple words capitalized.", "camelcase"],
 	["", "What keyword used when declaring class field as constant.", "final"],
 	["", "The process of creating an object from an existing class (template).", "instantiation"],
@@ -39,7 +39,7 @@ const questions = [
 	[-1, "Class will not occupy any memory space", true],
 	[-1, "Objects contain data in the form of function and code in the form of attributes.", false],
 	[-1, "OOP Language permits higher level of abstraction for solving real-life problems.", true],
-	[-1, "We used the private keyword for a constant matter.", true],
+	[-1, "We used the private keyword for a constant matter.", false],
 	[-1, "Without class fields, a class would simply be a structure.", false],
 	[-1, "Class methods acts as a action and function in class.", true],
 
@@ -61,11 +61,12 @@ const questions = [
 		"Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming",
 		"(0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
 		"Machine Language, (0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
-		"(0, 1), Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming"],
+		"(0, 1), Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming"
+	],
 
-	["", "Class can contains...", ["class field", "methods", "block", "constructor", "nested class interface"]],
+	["", "Class can contains...", ["class field", "method", "block", "constructor", "nested class interface"]],
 	["", "OOP can contains...", ["data", "function"]],
-	["", "Object consists of?", ["states", "behavior", "identity"]],
+	["", "Object consists of?", ["state", "behavior", "identity"]],
 ];
 
 const backResult = document.querySelector(`.backresult`);
@@ -171,7 +172,9 @@ function updateQuestionaire() {
 			qQ.textContent = questions[number][1];
 
 			if (reviewMode) {
-				if (questions[i][0] != -1) {
+				if ( questions[number][0] >= 0)			
+					arrayTrueFalse[questions[number][0]].style.backgroundColor = "#FF193E";
+				else {
 					qTrue.style.backgroundColor = "#FF193E";
 					qFalse.style.backgroundColor = "#FF193E";
 				}
@@ -186,6 +189,7 @@ function updateQuestionaire() {
 			for (let i = 0; i < enumerateDiv.children.length; i++) {
 				const child = enumerateDiv.children[i];
 				child.value = "";
+				child.readOnly = false;
 				if (i < questions[number][2].length) {
 					child.style.display = "block";
 					child.style.backgroundColor = "var(--choice-color)";

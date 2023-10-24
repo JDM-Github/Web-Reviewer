@@ -22,11 +22,50 @@ numToLetter.set( 3, "D");
 const questions = [
 	["", "A well-known writer in the field of Artificial Intelligence.", "ernest tello"],
 	["", "One of the Promoters of object-oriented paradigm. Also the one who created 'Small Talk'.", "allan c kay"],
+	["", "It is a blueprint or template of an object that contains variables for storing data and functions to perform operations on the data", "class"],
+	["", "____ is the most recent concept among programming paradigm and still means different things to different people. (Answer in Acronym).", "OOP"],
+	["", "An access modifier that will make all attributes/method available on all files and class.", "public"],
+	["", "An access modifier that will make attributes/method only available when inherited on own by.", "protected"],
+	["", "An access modifier that will make attributes/method only if own by.", "private"],
+	["", "It is represented by fields/ properties/ attributes of an object.", "states"],
+	["", "It gives a unique name to an object and enables one object to interact with other objects", "identity"],
+	["", "It is represented by methods of an object. It also reflects the response of an object with other objects.", "behvaior"],
+	["", "Named is formed of multiple words that are joined together as a single word with the first letter of each of multiple words capitalized.", "camelcase"],
+	["", "What keyword when declaring class field as constant.", "final"],
+	["", "The process of creating an object from an existing class (template).", "instantiation"],
+	["", "What is java entry point in program?", "main"],
+
+
+	[-1, "Class will not occupy any memory space", true],
+	[-1, "Objects contain data in the form of function and code in the form of attributes.", false],
+	[-1, "OOP Language permits higher level of abstraction for solving real-life problems.", true],
+	[-1, "We used the private keyword for a constant matter.", true],
+	[-1, "Without class fields, a class would simply be a structure.", false],
+	[-1, "Class methods acts as a action and function in class.", true],
+
+	[-1, ["Class Syntax. Create class field.", "C"],
+		"<access modifier> methodName () { // body }",
+		"<access modifier> <fieldname>;",
+		"<access modifier> data_type <fieldname>",
+		"<access modifier> class <className>",
+	],
+
+	[-1, ["All of this is a drawback of Procedural Programming. EXCEPT", "D"],
+		"Not suitable of high-level abstraction for solving real problem.",
+		"Functions are less reusable",
+		"Separates the data structures (variables) and algorithms (function)",
+		"Treats data as critical element in the program development and does not allow it to flow freely around the system.",
+	],
+
 	[-1, ["What is the right order of 'Layers of a Software Technology'.", "B"],
 		"Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming",
 		"(0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
 		"Machine Language, (0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
-		"(0, 1), Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming"]
+		"(0, 1), Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming"],
+
+	["", "Class can contains...", ["class field", "methods", "block", "constructor", "nested class interface"]],
+	["", "OOP can contains...", ["data", "function"]],
+	["", "Object consists of?", ["states", "behavior", "identity"]],
 ];
 
 const backResult = document.querySelector(`.backresult`);

@@ -1,33 +1,31 @@
 @font-face {
 	font-family : 'HandMade';
-	src         : url('Autum Bright.ttf') format('truetype');
+	src         : url('../assets/Autum Bright.ttf') format('truetype');
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
+	margin          : 0;
+	padding         : 0;
+	overflow-x      : hidden;
 	background-color: var(--background);
 }
 
 #loading-screen {
-	display: flex;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
+	display         : flex;
+	position        : fixed;
+	top             : 0;
+	left            : 0;
+	width           : 100vw;
+	height          : 100vh;
 	background-color: rgba(0, 0, 0, 0.7);
-
-	z-index: 9999;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	
-	color: white;
-	font-family: 'Nexa';
-	font-weight: bold;
-	font-size: 1rem;
+	z-index         : 9999;
+	justify-content : center;
+	align-items     : center;
+	flex-direction  : column;
+	color           : white;
+	font-family     : 'HandMade';
+	font-weight     : bold;
+	font-size       : 1.5rem;
 }
 
 .spinner {
@@ -36,31 +34,24 @@ body {
 	border-radius  : 50%;
 	width          : 40px;
 	height         : 40px;
-	animation: spin 1s linear infinite;
+	animation      : spin 1s linear infinite;
 }
 
 .design, .design2 {
-	position: absolute;
-	width: 100vw;
-	height: 80vh;
-	top: 0px;
-	left: 0px;
-	background-color: var(--design-color);
+	position         : absolute;
+	width            : 100vw;
+	height           : 80vh;
+	top              : 0px;
+	left             : 0px;
+	background-image : linear-gradient(to bottom, #ff0000, var(--design-color)); /* Adjust the gradient colors as needed */
+  	background-size  : cover;
+  	background-repeat: no-repeat;
 
 	border-radius: 30%;
 	transform: translateY(-50%);
 }
-.design2 {
-	transform: translateY(-40%);
-}
+.design2 { transform: translateY(-40%); }
 
-.rectangle {
-	position: absolute;
-	width: 100%;
-	height: 20vh;
-	bottom: 0;
-	background-color: red;
-}
 
 .selection {
 	display: grid;
@@ -98,6 +89,7 @@ body {
 .enumeration {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows   : repeat(3, 1fr);
 	column-gap: 20px;
 	row-gap   : 20px;
 	position  : relative;
@@ -113,7 +105,7 @@ body {
 
 .enumeration input {
 	position  : relative;
-	height    : auto;
+	height    : 50px;
 	width     : 98%;
 
 	outline         : none;
@@ -128,7 +120,7 @@ body {
 	align-items    : center;
 	justify-content: center;
 	caret-color    : white;
-	border: 2px solid transparent;
+	border: 2px solid white;
 
 	display: none;
 }
@@ -147,8 +139,9 @@ body {
 	border          : none;
 	border-radius   : 20px;
 	text-indent     : 20px;
+	caret-color     : white;
 	background-color: var(--choice-color);
-	border: 2px solid transparent;
+	border: 2px solid white;
 
 	display        : flex;
 	font-size      : var(--font-size);
@@ -179,13 +172,14 @@ body {
 	justify-content: center;
 	text-align: center;
 	cursor: pointer;
-	border: 2px solid transparent;
+	border: 2px solid white;
 }
-.selection div:hover,
+
+.selection  div:hover,
 .true-false div:hover,
 .identification:hover,
 .enumeration input:hover {
-	box-shadow: 0px 0px 10px var(--choice-color-hover);
+	box-shadow: 0px 0px 15px var(--choice-color-hover);
 	border: 2px solid var(--choice-color-hover);
 }
 
@@ -277,6 +271,45 @@ body {
 	background-color: #FE017F;
 }
 
+
+
+.uncopyable {
+	user-select           : none;
+	-moz-user-select      : none;
+	-webkit-user-select   : none;
+	-ms-user-select       : none;
+	-webkit-touch-callout : none;
+}
+
+@keyframes spin {
+	0%   { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.heart-container {
+	position: absolute;
+	max-width : 700px;
+	width     : 90vw;
+	height    : 140px;
+
+	top       : 0px;
+	left      : 50vw;
+
+	transform: translateX(-50%);
+}
+
+.heart {
+	position: absolute;
+	width : 100px;
+	height: 100px;
+
+	top   : 10px;
+	filter: drop-shadow(0 0 10px white);
+
+	transform: rotate(-25deg);
+	background: url('../assets/heart.png') center/cover no-repeat;
+}
+
 @media (max-width: 800px) {
 	.design {
 		border-radius: 20%;
@@ -294,17 +327,8 @@ body {
 	.design {
 		border-radius: 10%;
 	}
-}
-
-.uncopyable {
-	user-select           : none;
-	-moz-user-select      : none;
-	-webkit-user-select   : none;
-	-ms-user-select       : none;
-	-webkit-touch-callout : none;
-}
-
-@keyframes spin {
-	0%   { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+	.heart {
+		width : 80px;
+		height: 80px;
+	}
 }

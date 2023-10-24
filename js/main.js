@@ -1,12 +1,12 @@
-import { allCourseQuiz } from "./js/firebase.js";
+import { allCourseQuiz } from "../js/firebase.js";
 
-let number = -1;
-let maxNumber = 99;
-let reviewMode = false;
+let number           = -1;
+let maxNumber        = 99;
+let reviewMode       = false;
 let isIdentification = false;
-let isEnumeration = false;
+let isEnumeration    = false;
 
-let totalScore = 0;
+let totalScore    = 0;
 let numOfScoreInc = 0;
 let numOfScoreCor = 0;
 
@@ -20,7 +20,13 @@ numToLetter.set( 3, "D");
 // const questions = allCourseQuiz[0];
 // console.log(allCourseQuiz);
 const questions = [
-	
+	["", "A well-known writer in the field of Artificial Intelligence.", "ernest tello"],
+	["", "One of the Promoters of object-oriented paradigm. Also the one who created 'Small Talk'.", "allan c kay"],
+	[-1, ["What is the right order of 'Layers of a Software Technology'.", "B"],
+		"Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming",
+		"(0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
+		"Machine Language, (0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
+		"(0, 1), Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming"]
 ];
 
 const backResult = document.querySelector(`.backresult`);
@@ -40,7 +46,7 @@ const qT     = document.querySelector(`.topNav .questionDiv`      );
 const qTrue  = document.querySelector(`.true-false [selection="True"]`);
 const qFalse = document.querySelector(`.true-false [selection="False"]`);
 
-const selectionDiv = document.querySelector(`.selection`          );
+const selectionDiv = document.querySelector(`.selection`          );	
 const trueFalseDiv = document.querySelector(`.true-false`         );
 const enumerateDiv = document.querySelector(`.enumeration`        );
 const identiFyDiv  = document.querySelector(`.identification`     );
@@ -92,8 +98,7 @@ function updateQuestionaire() {
 
 	if (questions[number].length == 6) {
 		selectionDiv.style.display = "grid";
-		if ( questions[number][0] >= 0)
-			arrayChoice[questions[number][0]].style.backgroundColor = "#FE017F";
+		if ( questions[number][0] >= 0) arrayChoice[questions[number][0]].style.backgroundColor = "#FE017F";
 
 		qQ.textContent = questions[number][1][0];
 		qA.textContent = questions[number][2];
@@ -102,14 +107,20 @@ function updateQuestionaire() {
 		qD.textContent = questions[number][5];
 
 		if (reviewMode) {
-			if (questions[number][1][1] == "A")
-				qA.style.backgroundColor = "#77ff43";
-			else if (questions[number][1][1] == "B")
-				qB.style.backgroundColor = "#77ff43";
-			else if (questions[number][1][1] == "C")
-				qC.style.backgroundColor = "#77ff43";
-			else if (questions[number][1][1] == "D")
-				qD.style.backgroundColor = "#77ff43";
+			if ( questions[number][0] >= 0)
+				arrayChoice[questions[number][0]].style.backgroundColor = "#FF193E";
+			else {
+				qA.style.backgroundColor = "#FF193E";
+				qB.style.backgroundColor = "#FF193E";
+				qC.style.backgroundColor = "#FF193E";
+				qD.style.backgroundColor = "#FF193E";
+			}
+
+			const answerChar = questions[number][1][1];
+			     if (answerChar == "A") qA.style.backgroundColor = "#77ff43";
+			else if (answerChar == "B") qB.style.backgroundColor = "#77ff43";
+			else if (answerChar == "C") qC.style.backgroundColor = "#77ff43";
+			else if (answerChar == "D") qD.style.backgroundColor = "#77ff43";
 		}
 
 	} else if (questions[number].length == 3) {
@@ -121,6 +132,10 @@ function updateQuestionaire() {
 			qQ.textContent = questions[number][1];
 
 			if (reviewMode) {
+				if (questions[i][0] != -1) {
+					qTrue.style.backgroundColor = "#FF193E";
+					qFalse.style.backgroundColor = "#FF193E";
+				}
 				if (questions[number][2]) qTrue.style.backgroundColor = "#77ff43";
 				else qFalse.style.backgroundColor = "#77ff43";
 			}
@@ -131,37 +146,46 @@ function updateQuestionaire() {
 
 			for (let i = 0; i < enumerateDiv.children.length; i++) {
 				const child = enumerateDiv.children[i];
-				child.style.display = "none";
 				child.value = "";
+				if (i < questions[number][2].length) {
+					child.style.display = "block";
+					child.style.backgroundColor = "var(--choice-color)";
+				} else child.style.display = "none";
 			}
-			for (let i = 0; i < questions[number][2].length; i++) {
-				const child = enumerateDiv.children[i];
-				child.style.display = "block";
-			}
-
 			let enumAnswer = questions[number][0].split(", ");
-			for (let i = 0; i < enumAnswer.length; i++) {
-				const child = enumerateDiv.children[i];
-				child.value = enumAnswer[i];
-			}
 			if (reviewMode) {
-				const newArray = getRightArray(questions[number][2], []);
+				const newArray = getRightArray(questions[number][2], enumAnswer);
 				for (let i = 0; i < newArray.length; i++) {
 					const child = enumerateDiv.children[i];
 					child.value = newArray[i];
+					child.readOnly = true;
 
-					if (newArray[i].indexOf(":") != -1)
-						child.style.backgroundColor = "#77ff43";
-					else child.style.backgroundColor = "#FF69CE";
+					if (newArray[i].indexOf(":") != -1) child.style.backgroundColor = "#FF193E";
+					else child.style.backgroundColor = "#77ff43";
 				}
 			}
-			else isEnumeration = true;
-
+			else {
+				isEnumeration = true;
+				for (let i = 0; i < enumAnswer.length; i++) {
+					const child = enumerateDiv.children[i];
+					child.value = enumAnswer[i];
+					child.readOnly = false;
+				}
+			}
 		} else {
 			identiFyDiv.style.display = "block";
+
+			identiFyDiv.style.backgroundColor = "var(--choice-color)";
 			identiFyDiv.value = `${questions[number][0]}`;
 			qQ.textContent = questions[number][1];
-			if (reviewMode) identiFyDiv.value += ` : ${questions[number][2]}`;
+			if (reviewMode) {
+				if (identiFyDiv.value.toLowerCase() == questions[number][2].toLowerCase())
+					identiFyDiv.style.backgroundColor = "#77ff43"
+				else {
+					identiFyDiv.style.backgroundColor = "#FF193E"
+					identiFyDiv.value += ` : ${questions[number][2]}`;
+				}
+			}
 			else isIdentification = true;
 		}
 	}
@@ -188,28 +212,32 @@ function arraysAreEqual(arr1, arr2) {
 function getRightArray(arr1, arr2) {
 
 	const resultAns = []
-	const sortedArr1 = arr1.slice().sort();
-	const sortedArr2 = arr2.slice().sort();
+	const originalArray = arr1.slice().sort();
+	const answerArray = arr2.slice().sort();
 
-	for (let i = 0; i < sortedArr2.length; i++) {
-		let isFound = false, j = 0;
-		for (; j < sortedArr1.length; j++) {
-			if (sortedArr2[i].toLowerCase() == sortedArr1[j].toLowerCase()) {
-				resultAns.push(sortedArr2[i]);
-  				sortedArr1.splice(j, 1);
+	let i, j;
+	let isFound = false;
+	for (i = 0; i < originalArray.length; i++) {
+		isFound = false;
+		for (j = 0; j < answerArray.length; j++) {
+			if (originalArray[i].toLowerCase() == answerArray[j].toLowerCase()) {
+				resultAns.push(answerArray[j]);
+  				answerArray  .splice(j, 1);
   				isFound = true;
 				break;
 			}
 		}
-		if (!isFound) {
-			resultAns.push(`${sortedArr2[i]} : ${sortedArr1[j-1]}`);
-			sortedArr1.splice(j-1, 1);
-		}
+		if (!isFound) resultAns.push(` : ${originalArray[i]}`);
 	}
-	return resultAns.concat(sortedArr1);;
+	return resultAns;
 }
 
 function finish() {
+
+	totalScore       = 0;
+	numOfScoreInc    = 0;
+	numOfScoreCor    = 0;
+
 	for (let i = 0; i < questions.length; i++) {
 		if (questions[i].length == 6) {
 			if (numToLetter.get(questions[i][0]) == questions[i][1][1]) {

@@ -7,7 +7,6 @@
 	left      : 50vw;
 	margin-top: 30px;
 
-	font-size: ;
 	border-radius   : 20px;
 	transform       : translateX(-50%);
 	z-index: 999;
@@ -42,6 +41,6 @@
 
 .topNav .nextDiv:hover,
 .topNav .prevDiv:hover {
-	text-shadow: 0px 0px 5px #FE017F;
-	color: #FE017F;
+	text-shadow: 0px 0px 5px white;
+	color: #cccccc;
 }

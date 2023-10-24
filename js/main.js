@@ -34,29 +34,45 @@ const questions = [
 	["", "What keyword used when declaring class field as constant.", "final"],
 	["", "The process of creating an object from an existing class (template).", "instantiation"],
 	["", "What is java entry point in program?", "main"],
+	["", "Ease of understanding the code especially when working with complex programs that needs project teams in development", "naming convention"],
+	["", "CamelCase use in class field", "lowerCamelCase"],
+	["", "CamelCase use in methods", "upperCamelCase"],
+	["", "Solves the problem in the design level.", "abstraction"],
+	["", "Hides Details at the Implementation Level.", "Encapsulation"],
+	["", "Deriving a class from another class.", "inheritance"],
+	["", "Creating Objects having many forms.", "Polymorphism"],
 
-
+	[-1, "The basic unit of OOP is a class", true],
 	[-1, "Class will not occupy any memory space", true],
 	[-1, "Objects contain data in the form of function and code in the form of attributes.", false],
 	[-1, "OOP Language permits higher level of abstraction for solving real-life problems.", true],
 	[-1, "We used the private keyword for a constant matter.", false],
 	[-1, "Without class fields, a class would simply be a structure.", false],
 	[-1, "Class methods acts as a action and function in class.", true],
+	[-1, "In Procedural Programming, an object is said the to be the basic unit which represents the real-life entities.", false],
+	[-1, "State, Age, and Breed can be considered a states.", true],
+	[-1, "Use appropriate words or acronyms. When naming.", false],
+	[-1, "In Layers of a Software Technology Only the Uppermost Layer is Functional.", true],
+	[-1, "If you create multiple objects of one class, you can change the class field values in one object, without affecting the class field values in the other.", true],
 
 	[-1, ["Class Syntax. Create class field.", "C"],
 		"<access modifier> methodName () { // body }",
 		"<access modifier> <fieldname>;",
-		"<access modifier> data_type <fieldname>",
+		"<access modifier> data_type <fieldname>;",
 		"<access modifier> class <className>",
 	],
-
+	[-1, ["All of this is example on how to defined class field. EXCEPT", "C"],
+		"public int id;",
+		"private double hourlyRate;",
+		"<access modifier> data_type <fieldname>;",
+		"final protected String name;",
+	],
 	[-1, ["All of this is a drawback of Procedural Programming. EXCEPT", "D"],
 		"Not suitable of high-level abstraction for solving real problem.",
 		"Functions are less reusable",
 		"Separates the data structures (variables) and algorithms (function)",
 		"Treats data as critical element in the program development and does not allow it to flow freely around the system.",
 	],
-
 	[-1, ["What is the right order of 'Layers of a Software Technology'.", "B"],
 		"Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming",
 		"(0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
@@ -346,8 +362,7 @@ function retry() {
 				questions[i][0] = -1;
 			else questions[i][0] = "";
 	}
-	shuffleArray(questions);
-	next();
+	start();
 }
 
 function next() {
@@ -408,9 +423,49 @@ function checkScrollable() {
 	}
 }
 
-function main(argument) {
+function start() {
 	shuffleArray(questions);
+	questions.forEach((ques) => {
+		
+		if (ques.length == 6) {
+			let startIndex = 0;
+			const newIndex = Math.floor(Math.random() * 4);
+			const newArray = [];
+			if (ques[1][1] == "A") {
+				newArray.push(ques[3]);
+				newArray.push(ques[4]);
+				newArray.push(ques[5]);
+				startIndex = 0;
+			} else if (ques[1][1] == "B") {
+				newArray.push(ques[2]);
+				newArray.push(ques[4]);
+				newArray.push(ques[5]);
+				startIndex = 1;
+			} else if (ques[1][1] == "C") {
+				newArray.push(ques[2]);
+				newArray.push(ques[3]);
+				newArray.push(ques[5]);
+				startIndex = 2;
+			} else if (ques[1][1] == "D") {
+				newArray.push(ques[2]);
+				newArray.push(ques[3]);
+				newArray.push(ques[4]);
+				startIndex = 3;
+			}
+			ques[1][1] = numToLetter.get(newIndex);
+			ques[newIndex+2] = ques[startIndex+2];
+
+			shuffleArray(newArray);
+			for (let i = 0; i < newArray.length; i++) {
+				ques[((newIndex+1+i) % 4)+2] = newArray[i];
+			}
+		}
+	});
 	next();
+}
+
+function main() {
+	start();
 
 	window.addEventListener("load", checkScrollable);
 	window.addEventListener("resize", checkScrollable);

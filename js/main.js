@@ -31,7 +31,7 @@ const questions = [
 	["", "It gives a unique name to an object and enables one object to interact with other objects", "identity"],
 	["", "It is represented by methods of an object. It also reflects the response of an object with other objects.", "behvaior"],
 	["", "Named is formed of multiple words that are joined together as a single word with the first letter of each of multiple words capitalized.", "camelcase"],
-	["", "What keyword when declaring class field as constant.", "final"],
+	["", "What keyword used when declaring class field as constant.", "final"],
 	["", "The process of creating an object from an existing class (template).", "instantiation"],
 	["", "What is java entry point in program?", "main"],
 

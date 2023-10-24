@@ -34,7 +34,7 @@
 	cursor: pointer;
 }
 .topNav .prevDiv {
-	left: calc(100% - 24% - 20px);
+	left: calc(100% - 24% - 25px);
 	width: 12%;
 	cursor: pointer;
 }

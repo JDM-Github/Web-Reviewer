@@ -19,7 +19,9 @@ numToLetter.set( 1, "B");
 numToLetter.set( 2, "C");
 numToLetter.set( 3, "D");
 
-const questions = [
+let questions = null;
+
+const questionsWeb = [
 	["", "The ____ is a global information network that connects millions of computers", "internet"],
 	["", "A ____ is a computer system that delivers web content to users over the internet.", "web server"],
 	["", "Web Server is made up of two main parts:", ["hardware", "software"]],
@@ -109,71 +111,90 @@ const questions = [
 	]
 ]
 
-// const questions = [
-// 	["", "A well-known writer in the field of Artificial Intelligence.", "ernest tello"],
-// 	["", "One of the Promoters of object-oriented paradigm. Also the one who created 'Small Talk'.", "allan c kay"],
-// 	["", "It is a blueprint or template of an object that contains variables for storing data and functions to perform operations on the data", "class"],
-// 	["", "____ is the most recent concept among programming paradigm and still means different things to different people. (Answer in Acronym).", "OOP"],
-// 	["", "An access modifier that will make all attributes/method available on all files and class.", "public"],
-// 	["", "An access modifier that will make attributes/method only available when inherited or own by.", "protected"],
-// 	["", "An access modifier that will make attributes/method only available if own by.", "private"],
-// 	["", "It is represented by fields/ properties/ attributes of an object.", "state"],
-// 	["", "It gives a unique name to an object and enables one object to interact with other objects", "identity"],
-// 	["", "It is represented by methods of an object.", "behavior"],
-// 	["", "Named is formed of multiple words that are joined together as a single word with the first letter of each of multiple words capitalized.", "camelcase"],
-// 	["", "What keyword used when declaring class field as constant.", "final"],
-// 	["", "The process of creating an object from an existing class (template).", "instantiation"],
-// 	["", "What is java entry point in program?", "main"],
-// 	["", "Ease of understanding the code especially when working with complex programs that needs project teams in development", "naming convention"],
-// 	["", "CamelCase use in class field", "lowerCamelCase"],
-// 	["", "CamelCase use in methods", "upperCamelCase"],
-// 	["", "Solves the problem in the design level.", "abstraction"],
-// 	["", "Hides Details at the Implementation Level.", "Encapsulation"],
-// 	["", "Deriving a class from another class.", "inheritance"],
-// 	["", "Creating Objects having many forms.", "Polymorphism"],
+const questionsAOOP = [
+	["", "A well-known writer in the field of Artificial Intelligence.", "ernest tello"],
+	["", "One of the Promoters of object-oriented paradigm. Also the one who created 'Small Talk'.", "allan c kay"],
+	["", "It is a blueprint or template of an object that contains variables for storing data and functions to perform operations on the data", "class"],
+	["", "____ is the most recent concept among programming paradigm and still means different things to different people. (Answer in Acronym).", "OOP"],
+	["", "An access modifier that will make all attributes/method available on all files and class.", "public"],
+	["", "An access modifier that will make attributes/method only available when inherited or own by.", "protected"],
+	["", "An access modifier that will make attributes/method only available if own by.", "private"],
+	["", "It is represented by fields/ properties/ attributes of an object.", "state"],
+	["", "It gives a unique name to an object and enables one object to interact with other objects", "identity"],
+	["", "It is represented by methods of an object.", "behavior"],
+	["", "Named is formed of multiple words that are joined together as a single word with the first letter of each of multiple words capitalized.", "camelcase"],
+	["", "What keyword used when declaring class field as constant.", "final"],
+	["", "The process of creating an object from an existing class (template).", "instantiation"],
+	["", "What is java entry point in program?", "main"],
+	["", "Ease of understanding the code especially when working with complex programs that needs project teams in development", "naming convention"],
+	["", "CamelCase use in class field", "lowerCamelCase"],
+	["", "CamelCase use in methods", "upperCamelCase"],
+	["", "Solves the problem in the design level.", "abstraction"],
+	["", "Hides Details at the Implementation Level.", "Encapsulation"],
+	["", "Deriving a class from another class.", "inheritance"],
+	["", "Creating Objects having many forms.", "Polymorphism"],
+	["", "A constructor which has a specific number of parameters is called a ____ constructor", "parameterized"],
+	["", "a technique of having more than one constructor with different parameter lists which are arranged in a way that each constructor performs a different task. constructor  ____.", "overloading"],
+	["", "There are two types of Class Constructors.", ["default", "parameterized"]],
 
-// 	[-1, "The basic unit of OOP is a class", true],
-// 	[-1, "Class will not occupy any memory space", true],
-// 	[-1, "Objects contain data in the form of function and code in the form of attributes.", false],
-// 	[-1, "OOP Language permits higher level of abstraction for solving real-life problems.", true],
-// 	[-1, "We used the private keyword for a constant matter.", false],
-// 	[-1, "Without class fields, a class would simply be a structure.", false],
-// 	[-1, "Class methods acts as a action and function in class.", true],
-// 	[-1, "In Procedural Programming, an object is said the to be the basic unit which represents the real-life entities.", false],
-// 	[-1, "State, Age, and Breed can be considered a states.", true],
-// 	[-1, "Use appropriate words or acronyms. When naming.", false],
-// 	[-1, "In Layers of a Software Technology Only the Uppermost Layer is Functional.", true],
-// 	[-1, "If you create multiple objects of one class, you can change the class field values in one object, without affecting the class field values in the other.", true],
+	[-1, "The basic unit of OOP is a class", true],
+	[-1, "Class will not occupy any memory space", true],
+	[-1, "Objects contain data in the form of function and code in the form of attributes.", false],
+	[-1, "OOP Language permits higher level of abstraction for solving real-life problems.", true],
+	[-1, "We used the private keyword for a constant matter.", false],
+	[-1, "Without class fields, a class would simply be a structure.", false],
+	[-1, "Class methods acts as a action and function in class.", true],
+	[-1, "In Procedural Programming, an object is said the to be the basic unit which represents the real-life entities.", false],
+	[-1, "State, Age, and Breed can be considered a states.", true],
+	[-1, "Use appropriate words or acronyms. When naming.", false],
+	[-1, "In Layers of a Software Technology Only the Uppermost Layer is Functional.", true],
+	[-1, "Constructor cannot be abstract, static, final and synchronized", true],
+	[-1, "If you create multiple objects of one class, you can change the class field values in one object, without affecting the class field values in the other.", true],
+	[-1, "To overload constructor, Give the new constructor a different number of parameters", true],
+	[-1, "To overload constructor, Give the new constructor all different type of parameter", false],
+	[-1, "Unlike parameterized constructors, overloaded constructors will allow instantiation using the default constructor", false],
+	[-1, "A Class Constructor is a block of code similar to the method which called when an instance of the class is created.", true],
+	[-1, "A parameterized Constructor in Java is a technique of having more than one constructor with different parameters lists which are arranged in a way that each constructors performs a different task.", false],
 
-// 	[-1, ["Class Syntax. Create class field.", "C"],
-// 		"<access modifier> methodName () { // body }",
-// 		"<access modifier> <fieldname>;",
-// 		"<access modifier> data_type <fieldname>;",
-// 		"<access modifier> class <className>",
-// 	],
-// 	[-1, ["All of this is example on how to defined class field. EXCEPT", "D"],
-// 		"public int id;",
-// 		"private double hourlyRate;",
-// 		"<access modifier> data_type <fieldname>;",
-// 		"final protected String name;",
-// 	],
-// 	[-1, ["All of this is a drawback of Procedural Programming. EXCEPT", "D"],
-// 		"Not suitable of high-level abstraction for solving real problem.",
-// 		"Functions are less reusable",
-// 		"Separates the data structures (variables) and algorithms (function)",
-// 		"Treats data as critical element in the program development and does not allow it to flow freely around the system.",
-// 	],
-// 	[-1, ["What is the right order of 'Layers of a Software Technology'.", "B"],
-// 		"Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming",
-// 		"(0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
-// 		"Machine Language, (0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
-// 		"(0, 1), Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming"
-// 	],
 
-// 	["", "Class can contains...", ["class field", "method", "block", "constructor", "nested class interface"]],
-// 	["", "OOP can contains...", ["data", "function"]],
-// 	["", "Object consists of?", ["state", "behavior", "identity"]],
-// ];
+	[-1, ["Class Syntax. Create class field.", "C"],
+		"<access modifier> methodName () { // body }",
+		"<access modifier> <fieldname>;",
+		"<access modifier> data_type <fieldname>;",
+		"<access modifier> class <className>",
+	],
+	[-1, ["All of this is example on how to defined class field. EXCEPT", "D"],
+		"public int id;",
+		"private double hourlyRate;",
+		"<access modifier> data_type <fieldname>;",
+		"final protected String name;",
+	],
+	[-1, ["All of this is a drawback of Procedural Programming. EXCEPT", "D"],
+		"Not suitable of high-level abstraction for solving real problem.",
+		"Functions are less reusable",
+		"Separates the data structures (variables) and algorithms (function)",
+		"Treats data as critical element in the program development and does not allow it to flow freely around the system.",
+	],
+	[-1, ["What is the right order of 'Layers of a Software Technology'.", "B"],
+		"Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming",
+		"(0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
+		"Machine Language, (0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
+		"(0, 1), Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming"
+	],
+
+	["", "Class can contains...", ["class field", "method", "block", "constructor", "nested class interface"]],
+	["", "OOP can contains...", ["data", "function"]],
+	["", "Object consists of?", ["state", "behavior", "identity"]],
+];
+
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('var')) {
+	const varValue = urlParams.get('var');
+	if (varValue == 'web') questions = questionsWeb;
+	else if (varValue == 'aoop') questions = questionsAOOP;
+} else {
+	questions = questionsWeb;
+}
 
 const backResult = document.querySelector(`.backresult`);
 const retryDiv   = document.querySelector(`.result .buttons .resultRetry`);

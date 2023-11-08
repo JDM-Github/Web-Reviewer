@@ -1,0 +1,34 @@
+@font-face {
+	font-family : 'HandMade';
+	src         : url('../assets/Autum Bright.ttf') format('truetype');
+}
+
+body {
+	margin          : 0;
+	padding         : 0;
+	overflow-x      : hidden;
+	background-color: var(--background);
+}
+
+.design, .design2 {
+	position         : absolute;
+	width            : 100vw;
+	height           : 80vh;
+	top              : 0px;
+	left             : 0px;
+	background-image : linear-gradient(to bottom, #ff0000, var(--design-color));
+  	background-size  : cover;
+  	background-repeat: no-repeat;
+
+	border-radius: 30%;
+	transform: translateY(-50%);
+}
+.design2 { transform: translateY(-40%); }
+
+.uncopyable {
+	user-select           : none;
+	-moz-user-select      : none;
+	-webkit-user-select   : none;
+	-ms-user-select       : none;
+	-webkit-touch-callout : none;
+}

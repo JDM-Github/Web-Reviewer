@@ -1,17 +1,7 @@
-@font-face {
-	font-family : 'HandMade';
-	src         : url('../assets/Autum Bright.ttf') format('truetype');
-}
 
-body {
-	margin          : 0;
-	padding         : 0;
-	overflow-x      : hidden;
-	background-color: var(--background);
-}
 
 #loading-screen {
-	display         : flex;
+	display         : none;
 	position        : fixed;
 	top             : 0;
 	left            : 0;
@@ -36,22 +26,6 @@ body {
 	height         : 40px;
 	animation      : spin 1s linear infinite;
 }
-
-.design, .design2 {
-	position         : absolute;
-	width            : 100vw;
-	height           : 80vh;
-	top              : 0px;
-	left             : 0px;
-	background-image : linear-gradient(to bottom, #ff0000, var(--design-color)); /* Adjust the gradient colors as needed */
-  	background-size  : cover;
-  	background-repeat: no-repeat;
-
-	border-radius: 30%;
-	transform: translateY(-50%);
-}
-.design2 { transform: translateY(-40%); }
-
 
 .selection {
 	display: grid;
@@ -81,6 +55,7 @@ body {
 	left      : 50vw;
 
 	margin-top: 20px;
+	margin-bottom: 200px;
 	transform : translateX(-50%);
 
 	display: none;
@@ -99,6 +74,7 @@ body {
 	left      : 50vw;
 
 	margin-top: 20px;
+	margin-bottom: 100px;
 	transform : translateX(-50%);
 	display: none;
 }
@@ -133,6 +109,7 @@ body {
 	width     : 90vw;
 	left      : 50vw;
 	margin-top: 20px;
+	margin-bottom: 200px;
 	transform : translateX(-50%);
 
 	outline         : none;
@@ -162,7 +139,8 @@ body {
 .true-false div {
 	position        : relative;
 	border-radius   : 20px;
-	height          : auto;
+	min-height      : 50px;
+	height          : 50px;
 	background-color: var(--choice-color);
 
 	display        : flex;
@@ -271,16 +249,6 @@ body {
 	background-color: #FE017F;
 }
 
-
-
-.uncopyable {
-	user-select           : none;
-	-moz-user-select      : none;
-	-webkit-user-select   : none;
-	-ms-user-select       : none;
-	-webkit-touch-callout : none;
-}
-
 @keyframes spin {
 	0%   { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
@@ -294,14 +262,13 @@ body {
 
 	top       : 0px;
 	left      : 50vw;
-
 	transform: translateX(-50%);
 }
 
 .heart {
 	position: absolute;
-	width : 100px;
-	height: 100px;
+	width : 110px;
+	height: 110px;
 
 	top   : 10px;
 	filter: drop-shadow(0 0 10px white);

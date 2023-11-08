@@ -4,26 +4,35 @@
 
 .title {
 	position: relative;
-	font-size: 3rem;
+	font-size: 4rem;
+	color: white;
+	text-shadow: 0px 0px 10px white;
 
 	max-width: 700px;
 	width: 90vw;
 	text-align: center;
-
+	font-family: 'HandMade';
 	left: 50vw;
+
+	margin-top: 20px;
 	transform: translateX(-50%);
 }
 
 .submit {
 	position: relative;
-	margin-top: 10px;
+	margin-top: 20px;
 	width: 200px;
 	height: 50px;
 	left: 50vw;
-	font-size: 1.8rem;
 	text-align: center;
 	transform: translateX(-50%);
-	background-color: red;
+
+	background-color: var(--choice-color);
+	font-size      : calc(var(--font-size) - 0.2rem);
+	font-family    : 'HandMade';
+	border: 2px solid white;
+	box-shadow: 0 0 20px #FE017F;
+	cursor: pointer;
 
 	display: flex;
 	align-items: center;
@@ -31,18 +40,36 @@
 	border-radius: 20px;
 }
 
+.submit:hover {
+	background-color: #FE017F;
+}
+
 .express {
 	position: relative;
+	border-radius: 20px;
 	max-width: 700px;
 	width: 90vw;
 	height: 50px;
 	left: 50vw;
 
 	margin-top: 20px;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	text-align: center;
 
-/*	border: none;*/
-/*	outline: none;*/
+	border: none;
+	outline: none;
+	font-family: 'HandMade';
+	color: #FE017F;
+	caret-color: var(--choice-color);
+	box-shadow: 0 0 10px white;
 	transform: translateX(-50%);
+}
+
+.express::selection {
+	background-color: var(--choice-color);;
+	color: white;
+}
+
+.express::placeholder {
+	color: var(--choice-color);
 }

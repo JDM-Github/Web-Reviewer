@@ -21,170 +21,139 @@ numToLetter.set( 3, "D");
 
 let questions = null;
 
-const questionsWeb = [
-	["", "The ____ is a global information network that connects millions of computers", "internet"],
-	["", "A ____ is a computer system that delivers web content to users over the internet.", "web server"],
-	["", "Web Server is made up of two main parts:", ["hardware", "software"]],
-	["", "The browser client strips an URL down to its component parts:", ["protocol", "address", "path name", "file name"]],
+const questionsAOOP = [];
+const questionsWeb = [];
 
-	[-1, "Your browser connects to a server and request a page, the server sends back the requested page", true],
-	[-1, "The purpose of URI is to locate a resource on the server  hosting the web service.", true],
-	[-1, "The protocol 'http://' is secured.", false],
-	[-1, "The protocol 'snews://' is secured.", true],
-	[-1, "Server sends the data off to the browser based on request send by web browser", true],
-	[-1, "Server takes the path name and file name that it has been given, finds them on its software", false],
-	[-1, "Browser interprets, and properly displays the data it has received from web page", false],
-	[-1, "In 1995, HTML working group define HTML 2.0", true],
-	[-1, "In 1993, David Raggett dropped HTML+", false],
+const questionsHCI = [
 
-	["", "Who invented 'WWW' in 1989", "tim berners-lee"],
-	["", "Who invented 'HTML' in 1991", "tim berners-lee"],
-	["", "___-side programming language - programming language where validation of user input happens at the server itself acting on or creating a data stream as it is send out to the internet client. Examples (XML, Java, PERL, ASP.Net, PHP…)", "server"],
-	["", "___-side programming language - The program that runs on the client side or end-user workstation. Examples (JavaScript, VBScript,Angular….)", "client"],
+	[-1, ["This are the most spontaneous, which knows that a dialog fundamentally denotes to a progression from one state of the system to the next", "A"],
+		"State Transition Network",
+		"Statecharts",
+		"Petri Nets",
+		"Visual immediacy"
+	],
+	[-1, ["This represent complex reactive systems that extends Finite State Machines (FSM), handle concurrency, and adds memory to FSM. It also simplifies complex system representations.", "B"],
+		"State Transition Network",
+		"Statecharts",
+		"Petri Nets",
+		"Visual immediacy"
+	],
+	[-1, ["This is a simple model of active behavior, which has four behavior elements such as − places, transitions, arcs and tokens.", "C"],
+		"State Transition Network",
+		"Statecharts",
+		"Petri Nets",
+		"Visual immediacy"
+	],
+	[-1, ["This is an interaction style in which users act on displayed objects of interest using physical, incremental, reversible actions whose effects are immediately visible on the screen.", "A"],
+		"Direct manipulation",
+		"Skeuomorphism",
+		"Direct Engagement",
+		"Direct interpolation"
+	],
+	[-1, ["Users can see visual representations of the objects that they can interact with. As soon as they perform an action, they can see its effects on the state of the system.", "A"],
+		"Continuous representation of the object of interest",
+		"Physical actions instead of complex syntax",
+		"Continuous feedback and reversible, incremental actions",
+		"Rapid learning"
+	],
+	[-1, ["Actions are invoked physically via clicks, button presses, menu selections, and touch gestures. In the move-file example, drag-and-drop has a direct analog in the real world, so this implementation for the move action has the right signifiers and can be easily learned and remembered.", "B"],
+		"Continuous representation of the object of interest",
+		"Physical actions instead of complex syntax",
+		"Continuous feedback and reversible, incremental actions",
+		"Rapid learning"
+	],
+	[-1, ["Because of the visibility of the system state, it’s easy to validate that each action caused the right result. Thus, when users make mistakes, they can see right away the cause of the mistake and they should be able to easily undo it.", "C"],
+		"Continuous representation of the object of interest",
+		"Physical actions instead of complex syntax",
+		"Continuous feedback and reversible, incremental actions",
+		"Rapid learning"
+	],
+	[-1, ["Because the objects of interest and the potential actions in the system are visually represented, users can use recognition instead of recall to see what they could do and select an operation most likely to fulfill their goal.", "D"],
+		"Continuous representation of the object of interest",
+		"Physical actions instead of complex syntax",
+		"Continuous feedback and reversible, incremental actions",
+		"Rapid learning"
+	],
+	[-1, ["An interface that decides the gulfs between a user’s goal and the level of explanation delivered by the systems, with which the user deals.", "A"],
+		"Distance",
+		"The Gulf of Execution",
+		"The Gulf of Evaluation",
+		"Direct Engagement"
+	],
+	[-1, ["One of the principal objective of Usability is to diminish this gap by removing barriers and follow steps to minimize the user’s distraction from the intended task that would prevent the flow of the work.", "B"],
+		"Distance",
+		"The Gulf of Execution",
+		"The Gulf of Evaluation",
+		"Direct Engagement"
+	],
+	[-1, ["This is the representation of expectations that the user has interpreted from the system in a design.", "C"],
+		"Distance",
+		"The Gulf of Execution",
+		"The Gulf of Evaluation",
+		"Direct Engagement"
+	],
+	[-1, ["This is the representation of expectations that the user has interpreted from the system in a design.", "D"],
+		"Distance",
+		"The Gulf of Execution",
+		"The Gulf of Evaluation",
+		"Direct Engagement"
+	],
+	["", "____ is a graphical user interface element, which can be noticed as small window that provides information for the user and waits for the response the user in order to perform action upon users input.", "dialog box"],
+	["", "____ are lists of content categories or features, typically presented as a set of links or icons grouped together with visual styling distinct from the rest of the design.", "navigation menus"],
+	["", "An initial terminology for talking about ____ was discovered that included concepts such as visual immediacy, visual impetus, visual impedance, and visual metaphors, analogies and associations, in the context of information design for the web.", "visual thinking"],
+	["", "____ is the use of imagery and other visual forms to make sense of the world and to create meaningful content.", "visual thinking"],
+	["", "It is a reasoning process that helps in understanding of information in the visual representation.", "visual immediacy"],
+	["", "It is defined as a stimulus that aims at the increase in engagement in the contextual aspects of the representation.", "visual impetus"],
+	["", "It is perceived as the opposite of visual immediacy as it is a hindrance in the design of the representation.", "visual impedance"],
+	["", "Visual ____ and conceptual blending are similar to metaphors.", "analogy"],
+	["", "WYSIWYG means?", "what you see is what you get"],
+	["", "The action of using your fingertips to zoom in and out of the image is an example of a ___ interaction", "direct manipulation"],
 
-	["", "Incorporates the domain name, along with other detailed information, Use for redirecting pages, In essence, it's a set of directions and every web page has a unique one", "URL"],
-	["", "Also referred as web address", "URL"],
-	["", "Is a string of characters that unambiguously identifies a particular resource", "URI"],
-	["", "URL means", "uniform resource locator"],
-	["", "URI means", "uniform resource identifier"],
-	["", "Browsing or navigating the Web through pages of information", "surfing"],
-	["", "An electronic document written in an Internet language that depicts information", "web page"],
-	["", "Collection of related web pages usually controlled and maintained by single organization", "website"],
-	["", "The standard protocol used for transferring hypertext pages. Browsers and servers use the HTTP to communicate", "HTTP"],
-	["", "HTML means", "hyperText transfter protocol"],
-	["", "A simple markup language used to create hypertext documents that are portable from one platform to another.", "HTML"],
-
-	[-1, ["HTML element contains machine-readable information (metadata) about the document, like its title, scripts, and style sheets", "A"],
-		"<head>",
-		"<body>",
-		"<meta>",
-		"<script>"
+	["", "“Directness” has been considered as a phenomenon that contributes majorly to the manipulation programming. It has the following two aspects:",
+		["distance", "direct engagement"]
 	],
-	[-1, ["HTML element contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc", "B"],
-		"<head>",
-		"<body>",
-		"<html>",
-		"<script>"
+	["", "The syntax of an STN consists of the following two entities (Don't add \"s\")", ["circle", "arc"]],
+	["", "StateCharts has the following states: (Don't add \"s\")", ["active state", "basic state", "super state"]],
+	["", "Petri Nets provide a graphical explanation for easy understanding.",
+		["place", "transition", "arc", "token"]],
+	["", "3 Formalism Techniques", ["state transition network", "statecharts", "petri nets"]],
+	["", "Characteristics of direct manipulation",
+		[
+			"Continuous representation of the object of interest",
+			"Physical actions instead of complex syntax",
+			"Continuous feedback and reversible, incremental actions",
+			"Rapid learning"
+		]
 	],
-	[-1, ["HTML element that can considered a root of all", "A"],
-		"<head>",
-		"<body>",
-		"<html>",
-		"<script>"
+	["", "The natural sequence of items in the menu should be taken care of. Main factors in presentation sequence are:",
+		[
+			"time",
+			"numeric ordering",
+			"physical properties"
+		]
 	],
-
-	[-1, ["They can create dynamic websites and web applications, perform scheduling and data mining tasks, automate processes such as compilation, and send emails.", "C"],
-		"uniform resource locator",
-		"uniform resource identifier",
-		"server-side programming language",
-		"client-side programming language"
+	["", "Avoid common mistakes by following these guidelines for usable navigation menus:",
+		[
+			"Make It Visible",
+			"Communicate the Current Location",
+			"Coordinate Menus with User Tasks",
+			"Make It Easy to Manipulate"
+		]
 	],
-	[-1, ["It simply means running scripts, such as JavaScript, usually within a browser.", "D"],
-		"uniform resource locator",
-		"uniform resource identifier",
-		"server-side programming language",
-		"client-side programming language"
-	],
-	[-1, ["An underlined text or an image(indicating by a pointing hand cursor) that lets you jump from one web page to another.", "A"],
-		"Hypertext or Hyperlinks",
-		"Static Web Pages",
-		"Dynamic Web Pages",
-		"Virtual Reality Modeling Language"
-	],
-	[-1, ["existing HTML pages that are stored in server’s drive.", "B"],
-		"Hypertext or Hyperlinks",
-		"Static Web Pages",
-		"HyperText Transfter Protocol",
-		"Virtual Reality Modeling Language"
-	],
-	[-1, ["HTML pages that are created, dynamically on the fly, as response to a request by an application.", "C"],
-		"Hypertext or Hyperlinks",
-		"Static Web Pages",
-		"Dynamic Web Pages",
-		"HyperText Transfter Protocol"
-	],
-	[-1, ["A standard file format for representing 3-dimensional (3D) interactive vector graphics, designed particularly with the World Wide Web in mind", "D"],
-		"Hypertext or Hyperlinks",
-		"Static Web Pages",
-		"Dynamic Web Pages",
-		"Virtual Reality Modeling Language"
-	]
-]
-
-const questionsAOOP = [
-	["", "A well-known writer in the field of Artificial Intelligence.", "ernest tello"],
-	["", "One of the Promoters of object-oriented paradigm. Also the one who created 'Small Talk'.", "allan c kay"],
-	["", "It is a blueprint or template of an object that contains variables for storing data and functions to perform operations on the data", "class"],
-	["", "____ is the most recent concept among programming paradigm and still means different things to different people. (Answer in Acronym).", "OOP"],
-	["", "An access modifier that will make all attributes/method available on all files and class.", "public"],
-	["", "An access modifier that will make attributes/method only available when inherited or own by.", "protected"],
-	["", "An access modifier that will make attributes/method only available if own by.", "private"],
-	["", "It is represented by fields/ properties/ attributes of an object.", "state"],
-	["", "It gives a unique name to an object and enables one object to interact with other objects", "identity"],
-	["", "It is represented by methods of an object.", "behavior"],
-	["", "Named is formed of multiple words that are joined together as a single word with the first letter of each of multiple words capitalized.", "camelcase"],
-	["", "What keyword used when declaring class field as constant.", "final"],
-	["", "The process of creating an object from an existing class (template).", "instantiation"],
-	["", "What is java entry point in program?", "main"],
-	["", "Ease of understanding the code especially when working with complex programs that needs project teams in development", "naming convention"],
-	["", "CamelCase use in class field", "lowerCamelCase"],
-	["", "CamelCase use in methods", "upperCamelCase"],
-	["", "Solves the problem in the design level.", "abstraction"],
-	["", "Hides Details at the Implementation Level.", "Encapsulation"],
-	["", "Deriving a class from another class.", "inheritance"],
-	["", "Creating Objects having many forms.", "Polymorphism"],
-	["", "A constructor which has a specific number of parameters is called a ____ constructor", "parameterized"],
-	["", "a technique of having more than one constructor with different parameter lists which are arranged in a way that each constructor performs a different task. constructor  ____.", "overloading"],
-	["", "There are two types of Class Constructors.", ["default", "parameterized"]],
-
-	[-1, "The basic unit of OOP is a class", true],
-	[-1, "Class will not occupy any memory space", true],
-	[-1, "Objects contain data in the form of function and code in the form of attributes.", false],
-	[-1, "OOP Language permits higher level of abstraction for solving real-life problems.", true],
-	[-1, "We used the private keyword for a constant matter.", false],
-	[-1, "Without class fields, a class would simply be a structure.", false],
-	[-1, "Class methods acts as a action and function in class.", true],
-	[-1, "In Procedural Programming, an object is said the to be the basic unit which represents the real-life entities.", false],
-	[-1, "State, Age, and Breed can be considered a states.", true],
-	[-1, "Use appropriate words or acronyms. When naming.", false],
-	[-1, "In Layers of a Software Technology Only the Uppermost Layer is Functional.", true],
-	[-1, "Constructor cannot be abstract, static, final and synchronized", true],
-	[-1, "If you create multiple objects of one class, you can change the class field values in one object, without affecting the class field values in the other.", true],
-	[-1, "To overload constructor, Give the new constructor a different number of parameters", true],
-	[-1, "To overload constructor, Give the new constructor all different type of parameter", false],
-	[-1, "Unlike parameterized constructors, overloaded constructors will allow instantiation using the default constructor", false],
-	[-1, "A Class Constructor is a block of code similar to the method which called when an instance of the class is created.", true],
-	[-1, "A parameterized Constructor in Java is a technique of having more than one constructor with different parameters lists which are arranged in a way that each constructors performs a different task.", false],
-
-
-	[-1, ["Class Syntax. Create class field.", "C"],
-		"<access modifier> methodName () { // body }",
-		"<access modifier> <fieldname>;",
-		"<access modifier> data_type <fieldname>;",
-		"<access modifier> class <className>",
-	],
-	[-1, ["All of this is example on how to defined class field. EXCEPT", "D"],
-		"public int id;",
-		"private double hourlyRate;",
-		"<access modifier> data_type <fieldname>;",
-		"final protected String name;",
-	],
-	[-1, ["All of this is a drawback of Procedural Programming. EXCEPT", "D"],
-		"Not suitable of high-level abstraction for solving real problem.",
-		"Functions are less reusable",
-		"Separates the data structures (variables) and algorithms (function)",
-		"Treats data as critical element in the program development and does not allow it to flow freely around the system.",
-	],
-	[-1, ["What is the right order of 'Layers of a Software Technology'.", "B"],
-		"Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming",
-		"(0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
-		"Machine Language, (0, 1), Assembly Language, Procedural Programming, Object Oriented Programming",
-		"(0, 1), Assembly Language, Machine Language, Procedural Programming, Object Oriented Programming"
-	],
-
-	["", "Class can contains...", ["class field", "method", "block", "constructor", "nested class interface"]],
-	["", "OOP can contains...", ["data", "function"]],
-	["", "Object consists of?", ["state", "behavior", "identity"]],
+	[-1, "Even though the immediacy of response and the conversion of objectives to actions has made some tasks easy, all tasks should not be done easily.", true],
+	[-1, "Direct manipulation interfaces find it hard to manage variables, or illustration of discrete elements from a class of elements.", true],
+	[-1, "Direct manipulation interfaces is accurate as the dependency is on the user rather than on the system.", false],
+	[-1, "An important problem with direct manipulation interfaces is that it directly supports the techniques, the user thinks.", true],
+	[-1, "DM is slow", true],
+	[-1, "DM Advantage is that, Some gestures can be more error-prone than typing. Whereas in theory, because of the continuous feedback, DM minimizes the chance of certain errors, in practice, there are situations when a gesture is harder to perform than typing equivalent information.", false],
+	[-1, "In DM, Repetitive tasks are not well supported.", true],
+	[-1, "For each basic state b, the super state containing b is called the ancestor state.", true],
+	[-1, "A super state is called OR super state if exactly one of its sub states is active, whenever it is active.", true],
+	[-1, "When a visual demonstration is used to understand an idea in terms of another familiar idea it is called a visual metaphor.", true],
+	[-1, "Ben Shneiderman first coined the term “direct manipulation” in the early 1960s, at a time when the dominant interaction style was the command line.", false],
+	[-1, "Direct manipulation is one of the central concepts of graphical user interfaces (GUIs)", true],
+	[-1, "The DM systems described originally by Shneiderman are also skeuomorphic", true],
+	[-1, "Since skeuomorphic interfaces are indeed based on direct manipulation, then all direct manipulation interfaces must need to be skeuomorphic.", false]
 ];
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -192,8 +161,9 @@ if (urlParams.has('var')) {
 	const varValue = urlParams.get('var');
 	if (varValue == 'web') questions = questionsWeb;
 	else if (varValue == 'aoop') questions = questionsAOOP;
+	else if (varValue == 'hci') questions = questionsHCI;
 } else {
-	questions = questionsWeb;
+	questions = questionsHCI;
 }
 
 const backResult = document.querySelector(`.backresult`);

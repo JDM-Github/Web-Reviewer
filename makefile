@@ -3,11 +3,24 @@
 all: add commit push
 
 add:
-	git add .
+	@echo "+----------------------------+"
+	@echo "|         ADDING ALL         |"
+	@echo "+----------------------------+"
+	@git add .
+	@echo "+----------------------------+"
 
 commit:
-	git commit -F message.txt
+	@echo "+----------------------------+"
+	@echo "|         COMMITING          |"
+	@echo "+----------------------------+"
+	@git commit -F message.txt
+	@echo "+----------------------------+"
 
 push:
+	@echo "+----------------------------+"
+	@echo "|     PUSHING TO MASTER      |"
+	@echo "+----------------------------+"
 	git push origin master
+	@echo "+----------------------------+"
+
 

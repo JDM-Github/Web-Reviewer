@@ -99,7 +99,7 @@ const questionsHCI = [
 		"The Gulf of Evaluation",
 		"Direct Engagement"
 	],
-	["", "____ is a graphical user interface element, which can be noticed as small window that provides information for the user and waits for the response the user in order to perform action upon users input.", "dialog box"],
+	["", "____ is a graphical user interface element, which can be noticd ../cdced as small window that provides information for the user and waits for the response the user in order to perform action upon users input.", "dialog box"],
 	["", "____ are lists of content categories or features, typically presented as a set of links or icons grouped together with visual styling distinct from the rest of the design.", "navigation menus"],
 	["", "An initial terminology for talking about ____ was discovered that included concepts such as visual immediacy, visual impetus, visual impedance, and visual metaphors, analogies and associations, in the context of information design for the web.", "visual thinking"],
 	["", "____ is the use of imagery and other visual forms to make sense of the world and to create meaningful content.", "visual thinking"],
@@ -122,7 +122,7 @@ const questionsHCI = [
 		[
 			"Continuous representation of the object of interest",
 			"Physical actions instead of complex syntax",
-			"Continuous feedback and reversible, incremental actions",
+			"Continuous feedback and reversible incremental actions",
 			"Rapid learning"
 		]
 	],

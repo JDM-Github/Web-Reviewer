@@ -25,7 +25,8 @@ const questionsAOOP = [];
 const questionsWeb = [];
 
 const questionsHCI = [
-
+	["", "A designer must select one of the following prospects when there are no task-related arrangements",
+		["Alphabetic sequence of terms", "Grouping of related items", "Most frequently used items first", "Most important items first"]],
 	[-1, ["This are the most spontaneous, which knows that a dialog fundamentally denotes to a progression from one state of the system to the next", "A"],
 		"State Transition Network",
 		"Statecharts",
@@ -92,7 +93,7 @@ const questionsHCI = [
 		"The Gulf of Evaluation",
 		"Direct Engagement"
 	],
-	[-1, ["This is the representation of expectations that the user has interpreted from the system in a design.", "D"],
+	[-1, ["The scrutiny of the execution and evaluation process illuminates the efforts in using a system. It also gives the ways to minimize the mental effort required to use a system.", "D"],
 		"Distance",
 		"The Gulf of Execution",
 		"The Gulf of Evaluation",

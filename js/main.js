@@ -30,7 +30,7 @@ numToLetter.set( 9, "J");
 let questions = null;
 
 const questionsAOOP = [
-	["", "What is UML Stands for?", "Unified Modeling Langauge"],
+	["", "What is UML Stands for?", "Unified Modeling Language"],
 	["", "This serves as a reference to the current object within an instance method or a constructor", "this"],
 	["", "____ are reserved words whose meanings are already known to Java compiler", "keywords"],
 	["", "It is a way of packaging data and methods together into one unit which gives us the ability to make variables of a class keep hidden from all other classes that program or namespaces", "Encapsulation"],

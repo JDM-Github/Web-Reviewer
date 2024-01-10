@@ -167,6 +167,10 @@ const questionsHCI = [
 
 const questionsAccounting = [
 
+	[-1, "Nominal Account means TEMPORARY account.", true],
+	[-1, "Real Account means THE MAIN account.", false],
+	[-1, "Owner’s Drawing is an income statement account, but must also be closed, or put into zero balance, at the end of the accounting period.", false],
+
 	["", "It refer to amounts owed to lenders and suppliers.", "Liabilities||Liability"],
 	["", "This business renders services to customers or clients for a fee.", "Service Business"],
 	["", "This business buy goods or commodities and sell them at a profit.", "Merchandising Business||Trading Business||Merchandising/Trading Business"],
@@ -183,6 +187,11 @@ const questionsAccounting = [
 	["", "Income Earned but not yet received/collected.", "Accrued Income"],
 	["", "\"Total\" depreciated cost of a depreciable asset. (CONTRA-ASSET)", "Accumalated Depreciation"],
 	["", "Expenses PAID IN ADVANCE by the business (\"Paid but not yet incurred\") (CURRENT ASSET).", "Prepaid Expenses|Prepaid Expense"],
+
+	["", "The earning derived from service rendered by a servicing business to its customers. This includes cash and on account service.", "Service Income"],
+	["", "The earning derived from services rendered by a professional or professional servicing firm which could be in cash or in collectibles to its clients.", "Professional Fees"],
+	["", "The earning representing the time value of money derived from promissory notes received by the business, whether in cash or collectibles in the future.", "Interest Income"],
+	["", "The income earned from allowing others to use property or facility of the business", "Rent Income"],
 
 	[-1, ["A business owned by only ONE INDIVIDUAL", "A"],
 		"Sole Proprietorship",
@@ -249,7 +258,7 @@ const questionsAccounting = [
 			"Merchandise Inventory",
 			"Accrued Income",
 			"Advances to Employees",
-			"Prepaid Expenses|Prepaid Expense",
+			"Prepaid Expenses||Prepaid Expense",
 			"Office/Store Supplies||Office Supplies||Store Supplies||Supplies",
 			"Land",
 			"Building",

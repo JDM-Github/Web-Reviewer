@@ -52,7 +52,7 @@ const questionsAOOP = [
 		"Member Regulators"
 	],
 	[-1, ["____ gives an overview of a software system by displaying classes, attributes, operations, and their relations", "A"],
-		"Class Diagram",,
+		"Class Diagram",
 		"UML",
 		"Structure Graph",
 		"Entity Chart",

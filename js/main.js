@@ -45,7 +45,7 @@ const questionsAOOP = [
 	[-1, ["Acts as a non-access modifier in Java that is used mainly to manage memory.", "A"],
 		"static", "dynamic", "final", "abstract"
 	],
-	[-1, ["This sets the access level for classes, attributes, methods and constructors"],
+	[-1, ["This sets the access level for classes, attributes, methods and constructors", "A"],
 		"Access Modifier",,
 		"Visibility Controllers",
 		"Class Encapsulation",

@@ -1,5 +1,4 @@
 
-
 #loading-screen {
 	display         : none;
 	position        : fixed;
@@ -33,7 +32,7 @@
 	row-gap   : 20px;
 	position  : relative;
 	max-width : 700px;
-	min-height: 350px;
+	min-height: 340px;
 	height    : auto;
 	width     : 90vw;
 	left      : 50vw;
@@ -137,10 +136,11 @@
 
 .selection div,
 .true-false div {
+	padding         : 2px;
 	position        : relative;
 	border-radius   : 20px;
 	min-height      : 50px;
-	height          : 50px;
+	height          : auto;
 	background-color: var(--choice-color);
 
 	display        : flex;

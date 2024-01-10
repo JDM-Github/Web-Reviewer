@@ -185,7 +185,7 @@ const questionsAccounting = [
 	["", "An identifiable non-monetary asset \"without physical substance\" or have no physical appearance but are expected to provide future economic benefits to the company.",
 		"Intangible Assets||Intangible Asset"],
 	["", "Income Earned but not yet received/collected.", "Accrued Income"],
-	["", "\"Total\" depreciated cost of a depreciable asset. (CONTRA-ASSET)", "Accumalated Depreciation"],
+	["", "\"Total\" depreciated cost of a depreciable asset. (CONTRA-ASSET)", "Accumulated Depreciation"],
 	["", "Expenses PAID IN ADVANCE by the business (\"Paid but not yet incurred\") (CURRENT ASSET).", "Prepaid Expenses|Prepaid Expense"],
 
 	["", "The earning derived from service rendered by a servicing business to its customers. This includes cash and on account service.", "Service Income"],

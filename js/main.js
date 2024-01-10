@@ -46,7 +46,7 @@ const questionsAOOP = [
 		"static", "dynamic", "final", "abstract"
 	],
 	[-1, ["This sets the access level for classes, attributes, methods and constructors", "A"],
-		"Access Modifier",,
+		"Access Modifier",
 		"Visibility Controllers",
 		"Class Encapsulation",
 		"Member Regulators"

@@ -35,7 +35,6 @@ const questionsAOOP = [
 	["", "____ are reserved words whose meanings are already known to Java compiler", "keywords"],
 	["", "It is a way of packaging data and methods together into one unit which gives us the ability to make variables of a class keep hidden from all other classes that program or namespaces", "Encapsulation"],
 
-
 	[-1, ["It is a standard language for specifying, visualizing, constructing, and documenting the artifacts of software systems.", "A"],
 		"Unified Modeling Langauge",
 		"Object Modeling Technique",
@@ -59,7 +58,16 @@ const questionsAOOP = [
 		"Object Map"
 	],
 
+	["", "Give 3 UML Class Diagram Notation (The 2 end with 's')", [
+		"Class Name",
+		"Attributes/Fields||Attributes / Fields||Attributes||Fields",
+		"Operations/Methods||Operations / Method||Operations||Methods",
+	]],
 
+	[-1, "An abstract class name should be written in italics format", true],
+	[-1, "A class name should always be written in bold format (depends on the tool for creating diagrams).", true],
+
+	[-1, "Access Modifiers can be represented using (-) symbol for private, (+) symbol for public, and (#) symbol for protected to describe the accessibility of an attribute or method of a class.", true],
 	[-1,  "By not including the getter and setter methods in a class diagram simplifies the class diagram itself", true],
 	[-1, "Once a variable or method is declared static, it's not belongs to the class anymore or to any particular instance", false],
 	[-1, "Static variables or methods can be invoked without having an instance of class", true],

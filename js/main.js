@@ -29,193 +29,6 @@ numToLetter.set( 9, "J");
 
 let questions = null;
 
-const questionsAOOP = [
-	["", "What is UML Stands for?", "Unified Modeling Language"],
-	["", "This serves as a reference to the current object within an instance method or a constructor", "this"],
-	["", "____ are reserved words whose meanings are already known to Java compiler", "keywords"],
-	["", "It is a way of packaging data and methods together into one unit which gives us the ability to make variables of a class keep hidden from all other classes that program or namespaces", "Encapsulation"],
-
-	[-1, ["It is a standard language for specifying, visualizing, constructing, and documenting the artifacts of software systems.", "A"],
-		"Unified Modeling Langauge",
-		"Object Modeling Technique",
-		"Unified Software Design",
-		"Collaborative Modeling System"
-	],
-	[-1, ["Acts as a non-access modifier in Java that is used mainly to manage memory.", "A"],
-		"static", "dynamic", "final", "abstract"
-	],
-	[-1, ["This sets the access level for classes, attributes, methods and constructors", "A"],
-		"Access Modifier",
-		"Visibility Controllers",
-		"Class Encapsulation",
-		"Member Regulators"
-	],
-	[-1, ["____ gives an overview of a software system by displaying classes, attributes, operations, and their relations", "A"],
-		"Class Diagram",
-		"UML",
-		"Structure Graph",
-		"Entity Chart",
-		"Object Map"
-	],
-
-	["", "Give 3 UML Class Diagram Notation (The 2 end with 's')", [
-		"Class Name",
-		"Attributes/Fields||Attributes / Fields||Attributes||Fields",
-		"Operations/Methods||Operations / Method||Operations||Methods",
-	]],
-
-	[-1, "An abstract class name should be written in italics format", true],
-	[-1, "A class name should always be written in bold format (depends on the tool for creating diagrams).", true],
-
-	[-1, "Access Modifiers can be represented using (-) symbol for private, (+) symbol for public, and (#) symbol for protected to describe the accessibility of an attribute or method of a class.", true],
-	[-1,  "By not including the getter and setter methods in a class diagram simplifies the class diagram itself", true],
-	[-1, "Once a variable or method is declared static, it's not belongs to the class anymore or to any particular instance", false],
-	[-1, "Static variables or methods can be invoked without having an instance of class", true],
-	[-1, "this and super cannot be used in static context", true],
-	[-1, "this() can be used to invoke current class method", false],
-	[-1, "The protected access modifier can be applied on the data member, method and constructor. It can't be applied on the class.", true],
-];
-const questionsWeb = [
-	["", "Bootstrap was developed by ____ and  ____ at Twitter", ["Mark Otto", "Jacob Thornton"]],
-	["", "Bootstrap was released as open source in ____ 2011", "August"],
-
-
-	[-1, "Bootstrap is a powerful front-end framework for faster and easier web development", true],
-];
-
-// const questionsHCI = [
-// 	["", "A designer must select one of the following prospects when there are no task-related arrangements",
-// 		["Alphabetic sequence of terms", "Grouping of related items", "Most frequently used items first", "Most important items first"]],
-// 	[-1, ["This are the most spontaneous, which knows that a dialog fundamentally denotes to a progression from one state of the system to the next", "A"],
-// 		"State Transition Network",
-// 		"Statecharts",
-// 		"Petri Nets",
-// 		"Visual immediacy"
-
-// 	],
-// 	[-1, ["This represent complex reacti, trueve systems that extends Finite State Machines (FSM), handle concurrency, and adds memory to FSM. It also simplifies complex system representations.", "B"],,
-// 		"State Transition Network",
-// 		"Statecharts",
-// 		"Petri Nets",
-// 		"Visual immediacy"
-// 	],
-// 	[-1, ["This is a simple model of active behavior, which has four behavior elements such as − places, transitions, arcs and tokens.", "C"],
-// 		"State Transition Network",
-// 		"Statecharts",
-// 		"Petri Nets",
-// 		"Visual immediacy"
-// 	],
-// 	[-1, ["This is an interaction style in which users act on displayed objects of interest using physical, incremental, reversible actions whose effects are immediately visible on the screen.", "A"],
-// 		"Direct manipulation",
-// 		"Skeuomorphism",
-// 		"Direct Engagement",
-// 		"Direct interpolation"
-// 	],
-// 	[-1, ["Users can see visual representations of the objects that they can interact with. As soon as they perform an action, they can see its effects on the state of the system.", "A"],
-// 		"Continuous representation of the object of interest",
-// 		"Physical actions instead of complex syntax",
-// 		"Continuous feedback and reversible, incremental actions",
-// 		"Rapid learning"
-// 	],
-// 	[-1, ["Actions are invoked physically via clicks, button presses, menu selections, and touch gestures. In the move-file example, drag-and-drop has a direct analog in the real world, so this implementation for the move action has the right signifiers and can be easily learned and remembered.", "B"],
-// 		"Continuous representation of the object of interest",
-// 		"Physical actions instead of complex syntax",
-// 		"Continuous feedback and reversible, incremental actions",
-// 		"Rapid learning"
-// 	],
-// 	[-1, ["Because of the visibility of the system state, it’s easy to validate that each action caused the right result. Thus, when users make mistakes, they can see right away the cause of the mistake and they should be able to easily undo it.", "C"],
-// 		"Continuous representation of the object of interest",
-// 		"Physical actions instead of complex syntax",
-// 		"Continuous feedback and reversible, incremental actions",
-// 		"Rapid learning"
-// 	],
-// 	[-1, ["Because the objects of interest and the potential actions in the system are visually represented, users can use recognition instead of recall to see what they could do and select an operation most likely to fulfill their goal.", "D"],
-// 		"Continuous representation of the object of interest",
-// 		"Physical actions instead of complex syntax",
-// 		"Continuous feedback and reversible, incremental actions",
-// 		"Rapid learning"
-// 	],
-// 	[-1, ["An interface that decides the gulfs between a user’s goal and the level of explanation delivered by the systems, with which the user deals.", "A"],
-// 		"Distance",
-// 		"The Gulf of Execution",
-// 		"The Gulf of Evaluation",
-// 		"Direct Engagement"
-// 	],
-// 	[-1, ["One of the principal objective of Usability is to diminish this gap by removing barriers and follow steps to minimize the user’s distraction from the intended task that would prevent the flow of the work.", "B"],
-// 		"Distance",
-// 		"The Gulf of Execution",
-// 		"The Gulf of Evaluation",
-// 		"Direct Engagement"
-// 	],
-// 	[-1, ["This is the representation of expectations that the user has interpreted from the system in a design.", "C"],
-// 		"Distance",
-// 		"The Gulf of Execution",
-// 		"The Gulf of Evaluation",
-// 		"Direct Engagement"
-// 	],
-// 	[-1, ["The scrutiny of the execution and evaluation process illuminates the efforts in using a system. It also gives the ways to minimize the mental effort required to use a system.", "D"],
-// 		"Distance",
-// 		"The Gulf of Execution",
-// 		"The Gulf of Evaluation",
-// 		"Direct Engagement"
-// 	],
-// 	["", "____ is a graphical user interface element, which can be noticd ../cdced as small window that provides information for the user and waits for the response the user in order to perform action upon users input.", "dialog box"],
-// 	["", "____ are lists of content categories or features, typically presented as a set of links or icons grouped together with visual styling distinct from the rest of the design.", "navigation menus"],
-// 	["", "An initial terminology for talking about ____ was discovered that included concepts such as visual immediacy, visual impetus, visual impedance, and visual metaphors, analogies and associations, in the context of information design for the web.", "visual thinking"],
-// 	["", "____ is the use of imagery and other visual forms to make sense of the world and to create meaningful content.", "visual thinking"],
-// 	["", "It is a reasoning process that helps in understanding of information in the visual representation.", "visual immediacy"],
-// 	["", "It is defined as a stimulus that aims at the increase in engagement in the contextual aspects of the representation.", "visual impetus"],
-// 	["", "It is perceived as the opposite of visual immediacy as it is a hindrance in the design of the representation.", "visual impedance"],
-// 	["", "Visual ____ and conceptual blending are similar to metaphors.", "analogy"],
-// 	["", "WYSIWYG means?", "what you see is what you get"],
-// 	["", "The action of using your fingertips to zoom in and out of the image is an example of a ___ interaction", "direct manipulation"],
-
-// 	["", "“Directness” has been considered as a phenomenon that contributes majorly to the manipulation programming. It has the following two aspects:",
-// 		["distance", "direct engagement"]
-// 	],
-// 	["", "The syntax of an STN consists of the following two entities (Don't add \"s\")", ["circle", "arc"]],
-// 	["", "StateCharts has the following states: (Don't add \"s\")", ["active state", "basic state", "super state"]],
-// 	["", "Petri Nets provide a graphical explanation for easy understanding.",
-// 		["place", "transition", "arc", "token"]],
-// 	["", "3 Formalism Techniques", ["state transition network", "statecharts", "petri nets"]],
-// 	["", "Characteristics of direct manipulation",
-// 		[
-// 			"Continuous representation of the object of interest",
-// 			"Physical actions instead of complex syntax",
-// 			"Continuous feedback and reversible incremental actions",
-// 			"Rapid learning"
-// 		]
-// 	],
-// 	["", "The natural sequence of items in the menu should be taken care of. Main factors in presentation sequence are:",
-// 		[
-// 			"time",
-// 			"numeric ordering",
-// 			"physical properties"
-// 		]
-// 	],
-// 	["", "Avoid common mistakes by following these guidelines for usable navigation menus:",
-// 		[
-// 			"Make It Visible",
-// 			"Communicate the Current Location",
-// 			"Coordinate Menus with User Tasks",
-// 			"Make It Easy to Manipulate"
-// 		]
-// 	],
-// 	[-1, "Even though the immediacy of response and the conversion of objectives to actions has made some tasks easy, all tasks should not be done easily.", true],
-// 	[-1, "Direct manipulation interfaces find it hard to manage variables, or illustration of discrete elements from a class of elements.", true],
-// 	[-1, "Direct manipulation interfaces is accurate as the dependency is on the user rather than on the system.", false],
-// 	[-1, "An important problem with direct manipulation interfaces is that it directly supports the techniques, the user thinks.", true],
-// 	[-1, "DM is slow", true],
-// 	[-1, "DM Advantage is that, Some gestures can be more error-prone than typing. Whereas in theory, because of the continuous feedback, DM minimizes the chance of certain errors, in practice, there are situations when a gesture is harder to perform than typing equivalent information.", false],
-// 	[-1, "In DM, Repetitive tasks are not well supported.", true],
-// 	[-1, "For each basic state b, the super state containing b is called the ancestor state.", true],
-// 	[-1, "A super state is called OR super state if exactly one of its sub states is active, whenever it is active.", true],
-// 	[-1, "When a visual demonstration is used to understand an idea in terms of another familiar idea it is called a visual metaphor.", true],
-// 	[-1, "Ben Shneiderman first coined the term “direct manipulation” in the early 1960s, at a time when the dominant interaction style was the command line.", false],
-// 	[-1, "Direct manipulation is one of the central concepts of graphical user interfaces (GUIs)", true],
-// 	[-1, "The DM systems described originally by Shneiderman are also skeuomorphic", true],
-// 	[-1, "Since skeuomorphic interfaces are indeed based on direct manipulation, then all direct manipulation interfaces must need to be skeuomorphic.", false]
-// ];
 
 // const questionsAccounting = [
 
@@ -343,16 +156,76 @@ const questionsWeb = [
 // 		"Equipment"
 // 	]
 // ];
+var questionsWeb = [], questionsAOOP = [], questionsHCI = [], questionsAccounting = [], questionsEnvi = [];
+
+questionsEnvi = [
+	["", "is the most abundant of all energy resources and can even be harnessed in cloudy weathers", "Solar Energy"],
+	["", "Solar energy used ___ to collect energy", "Photovoltaic"],
+	["", "harnesses the energy of water moving from higher to lower elevations. It can be generated from reservoirs and rivers.", "Hydropower"],
+	["", "Give 5 renewable energy in module.", [
+		"Solar Energy",
+		"Wind Energy",
+		'Hydropower',
+		"Geothermal Energy",
+		"Bioenergy"
+	]],
+	["", "Main benefits of Green Energy", [
+		"Self-sufficient",
+		"Inexhaustible energy source",
+		"No carbon emmisions of greenhouse gases",
+		"Environmentally friendly",
+		"Sustainability",
+		"Energy independence"
+	]],
+	["", "This is the portion of the Earth that is inhabited by life, the sum of all livingmatter on Earth", "Biosphere"],
+	["", "All 3 components of Biosphere", [
+		"lithosphere",
+		"hydrosphere",
+		"atmosphere"
+	]],
+	["", "Individual -> ? ? ? ? ?", [
+		"Population",
+		"Community",
+		"Ecosystem",
+		"Biome",
+		"Biosphere"
+	]],
+	["", "can be accessed in areas where hot springs/geothermal reservoirs are near the surface of the Earth.", "Direct geothermal energy"],
+	["", "utilizes a series of underground pipes, an electric compressor and a heat exchanger to absorb and transfer heat.", "Geothermal heat pumps"],
+	["", "also harness the heat of the Earth through hot water and steam. In these plants, heat is used to generate electricity.", "Geothermal power plants"],
+	["", "Benefits of biodiversity", ["Oxygen", "Clean water", "Food", "Medicine"]],
+	["", "Threat to biodiversity", ["Pollution", "Global climate change", "Exploitation", "Species introduction", "Habitat destruction"]],
+	[-1, "High diversity creates a more stable environment", true],
+	[-1, "• Some scientists estimate that as many as 3 species per hour are going extinct and 20,000 extinctions occur each year.", true],
+
+	["", "The smallest part of the environment that supports a distinct flora and fauna;", "Microhabitat"],
+	["", "any species which is vulnerable to becoming endangered in the near future", "Threatened"],
+	["", "any species that is at risk of extinction because of a sudden rapid decrease in its population or a loss of its critical habitat", "Endangered"],
+	["", "any species of animal or plant whose no more individuals are alive anywhere in the world", "Extinct"],
+	["", "3 Components of biodiversity",["Diversity of genes", "Diversity of number of species", "Variety of ecosystems"]],
+	["", "Features of Earth’s surface (continents, rocks, sea floor, and everything below Earth’s surface", "lithosphere"],
+	["", "Hydologic Cycle, All of Earth’s water, ice, water vapor", "hydrosphere"],
+	["", "The air blanketing Earth’s solid and liquid surface, It becomes progressively thinner with increasing altitude", "atmosphere"],
+	["", "Three tectonic plate types", ["Transform", "Convergent", "Divergent"]],
+	["", "Three reason why human can cause global change", ["Population Growth", "Industrialization", "Pollution"]],
+	["", "4 Major concern in Biosphere", ["Temperature", "Climate flunctuation", "Greenhouse gases", "Ozone layer"]],
+	["", "It occurs when the environment change too fast, It differ in scale, scope, # of species, It recovery took millions of years", "Mass Extinction"],
+	["", "Why mass extinction happens?", ["hunting", "fishing", "commercial trades", "loss of habitat"]],
+	["", "is a discipline that brings together many fields to attempt to solve biodiversity problems, It develop practical approaches to prevent extinction and destruction of ecosystems", "Conservation biology"],
+
+
+];
 
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('var')) {
 	const varValue = urlParams.get('var');
 	if (varValue == 'web') questions = questionsWeb;
 	else if (varValue == 'aoop') questions = questionsAOOP;
-	else if (varValue == 'hci') questions = questionsHCI;
-	else if (varValue == 'acc') questions = questionsAccounting;
+	else if (varValue == 'hci')  questions = questionsHCI;
+	else if (varValue == 'acc')  questions = questionsAccounting;
+	else if (varValue == 'env')  questions = questionsEnvi;
 } else {
-	questions = questionsHCI;
+	questions = [["", "TEST QUESTION", "TEST"]];
 }
 
 const backResult = document.querySelector(`.backresult`);

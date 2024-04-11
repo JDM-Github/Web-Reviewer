@@ -26,4 +26,10 @@
 	align-items    : center;
 	justify-content: center;
 	text-align     : center;
+
+	background-size: 80% 100%;
+	background-position: center;
+/*	background-clip: ;*/
+	border-radius: 10%;
+
 }

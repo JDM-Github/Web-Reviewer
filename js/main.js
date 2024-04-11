@@ -27,194 +27,187 @@ numToLetter.set( 7, "H");
 numToLetter.set( 8, "I");
 numToLetter.set( 9, "J");
 
+// Sample
+// [-1, "TEST", true]
+// [-1, ["TEST", "A"], "", "", "", ""]
+// ["", "TETS", "TEST"]
+// ["", "TEST", ["TEST", "TEST"]]
 let questions = null;
 
-
-// const questionsAccounting = [
-
-// 	[-1, "Nominal Account means TEMPORARY account.", true],
-// 	[-1, "Real Account means THE MAIN account.", false],
-// 	[-1, "Owner’s Drawing is an income statement account, but must also be closed, or put into zero balance, at the end of the accounting period.", false],
-
-// 	["", "It refer to amounts owed to lenders and suppliers.", "Liabilities||Liability"],
-// 	["", "This business renders services to customers or clients for a fee.", "Service Business"],
-// 	["", "This business buy goods or commodities and sell them at a profit.", "Merchandising Business||Trading Business||Merchandising/Trading Business"],
-// 	["", "This business makes \"finished goods\" from \"raw materials\" or unassembled parts. It \"produces\" the goods that it sells.", "Manufacturing Business"],
-// 	["", "This is OUTFLOW of economic benefits, in simple term, these are COSTS incurred to produce income/revenue", "Expenses||Expense"],
-// 	["", "These are PROPERTIES owned by the business.", "Assets||Asset"],
-// 	["", " It is the RESIDUAL INTEREST in the Assets of the business after deducting all its liabilities.",
-// 		"Owner's Equity||Owners Equity||Capital||Owner's Equity/Capital||Owners Equity/Capital"],
-
-// 	["", "____ are debt and equity securities that are purchased with the intent of selling them in the \"near term\" or very soon.", "Trading Security||Trading Securities"],
-// 	["", "____ are claims against debtors or customers arising from services rendered on account and sale of merchandise on account.", "Account Receivable||Account Receivables"],
-// 	["", "An identifiable non-monetary asset \"without physical substance\" or have no physical appearance but are expected to provide future economic benefits to the company.",
-// 		"Intangible Assets||Intangible Asset"],
-// 	["", "Income Earned but not yet received/collected.", "Accrued Income"],
-// 	["", "\"Total\" depreciated cost of a depreciable asset. (CONTRA-ASSET)", "Accumulated Depreciation"],
-// 	["", "Expenses PAID IN ADVANCE by the business (\"Paid but not yet incurred\") (CURRENT ASSET).", "Prepaid Expenses|Prepaid Expense"],
-
-// 	["", "The earning derived from service rendered by a servicing business to its customers. This includes cash and on account service.", "Service Income"],
-// 	["", "The earning derived from services rendered by a professional or professional servicing firm which could be in cash or in collectibles to its clients.", "Professional Fees"],
-// 	["", "The earning representing the time value of money derived from promissory notes received by the business, whether in cash or collectibles in the future.", "Interest Income"],
-// 	["", "The income earned from allowing others to use property or facility of the business", "Rent Income"],
-
-// 	[-1, ["A business owned by only ONE INDIVIDUAL", "A"],
-// 		"Sole Proprietorship",
-// 		"Partnership",
-// 		"Corporation",
-// 		"Cooperative"
-// 	],
-// 	[-1, ["An association of \"TWO or MORE\" persons who bind themselves to contribute money, property or industry(services) to a common fund, with the intention of dividing the profits among themselves.", "B"],
-// 		"Sole Proprietorship",
-// 		"Partnership",
-// 		"Corporation",
-// 		"Cooperative"
-// 	],
-// 	[-1, ["An artifical being(not natural, like human being) created by operation of LAW, having the rights of SUCCESSION, and the POWERS AND ATTRIBUTES expressly authorized by law or incident to its existence.", "C"],
-// 		"Sole Proprietorship",
-// 		"Partnership",
-// 		"Corporation",
-// 		"Cooperative"
-// 	],
-// 	[-1, ["A legal entity owned and democratically controlled by its members. Members often have a close association with the enterprise as producers or consumers of its products or services, or as its employees.", "D"],
-// 		"Sole Proprietorship",
-// 		"Partnership",
-// 		"Corporation",
-// 		"Cooperative"
-// 	],
-// 	[-1, ["The right Equity/Capital Formula", "A"],
-// 		"Investment + Revenue - Expenses - Drawings(Withdrawal)",
-// 		"Investment - Revenue + Expenses - Drawings(Withdrawal)",
-// 		"Revenue - Investment + Expenses + Drawings(Withdrawal)",
-// 		"Investment + Revenue + Expenses + Drawings(Withdrawal)"
-// 	],
-
-// 	["", "Give 3 types of Business mentioned in REVIEWER",
-// 		[
-// 			"Service Business",
-// 			"Manufacturing Business",
-// 			"Merchandising Business||Trading Business||Merchandising/Trading Business"
-// 		]
-// 	],
-// 	["", "In DEBIT (DEAL), what is the meaning of DEAL",
-// 		[
-// 			"Dividend||Dividends",
-// 			"Expenses||Expense",
-// 			"Asset||Assets",
-// 			"Losses||Loss"
-// 		]
-// 	],
-// 	["", "In CREDIT (GIRLS), what is the meaning of GIRLS",
-// 		[
-// 			"Gains||Gain",
-// 			"Income",
-// 			"Revenue||Revenues",
-// 			"Liabilities||Liability",
-// 			"StockHolder||StockHolders||Owners Equity||Owner's Equity"
-// 		]
-// 	],
-
-// 	["", "Give 5 Example of Current Asset",
-// 		[
-// 			"Cash",
-// 			"Trading Security||Trading Securities",
-// 			"Account Receivables||Account Receivable",
-// 			"Notes Receivable||Notes Receivables",
-// 			"Merchandise Inventory",
-// 			"Accrued Income",
-// 			"Advances to Employees",
-// 			"Prepaid Expenses||Prepaid Expense",
-// 			"Office/Store Supplies||Office Supplies||Store Supplies||Supplies",
-// 			"Land",
-// 			"Building",
-// 			"Machinery and Equipment||Machinery & Equipment",
-// 			"Intangible Asset||Intangible Assets"
-// 		], 5
-// 	],
-// 	["", "What are the 2 Classification of Assets",
-// 		[
-// 			"Current Assets||Current Asset",
-// 			"Non-Current Assets||Non-Current Asset||Non Current Assets||Non Current Asset"
-// 		]
-// 	],
-
-// 	[-1, "Liabilities also include amounts received in advance for a future sale or for future service to be performed.", true],
-// 	[-1, "CAPITAL ACOUNT (or EQUITY ACCOUNT) consists of the following: \na. \"Owner's Capital\"\nb. \"Owner's Drawing\"", true],
-
-// 	[-1, ["All of this is an elements of Financial Statements, EXCEPT", "F"],
-// 		"INCOME/REVENUE",
-// 		"EXPENSE",
-// 		"ASSETS",
-// 		"LIABILITIES",
-// 		"OWNER'S EQUITY/CAPITAL",
-// 		"ACCOUNTS RECEIVABLES"
-// 	],
-// 	[-1, ["All of this is an example of Non-Current Assets, EXCEPT", "C"],
-// 		"Investment Properties",
-// 		"Intangible Assets",
-// 		"Inventory",
-// 		"Equipment"
-// 	]
-// ];
 var questionsWeb = [], questionsAOOP = [], questionsHCI = [], questionsAccounting = [], questionsEnvi = [];
 
-questionsEnvi = [
-	["", "is the most abundant of all energy resources and can even be harnessed in cloudy weathers", "Solar Energy"],
-	["", "Solar energy used ___ to collect energy", "Photovoltaic"],
-	["", "harnesses the energy of water moving from higher to lower elevations. It can be generated from reservoirs and rivers.", "Hydropower"],
-	["", "Give 5 renewable energy in module.", [
-		"Solar Energy",
-		"Wind Energy",
-		'Hydropower',
-		"Geothermal Energy",
-		"Bioenergy"
-	]],
-	["", "Main benefits of Green Energy", [
-		"Self-sufficient",
-		"Inexhaustible energy source",
-		"No carbon emmisions of greenhouse gases",
-		"Environmentally friendly",
-		"Sustainability",
-		"Energy independence"
-	]],
-	["", "This is the portion of the Earth that is inhabited by life, the sum of all livingmatter on Earth", "Biosphere"],
-	["", "All 3 components of Biosphere", [
-		"lithosphere",
-		"hydrosphere",
-		"atmosphere"
-	]],
-	["", "Individual -> ? ? ? ? ?", [
-		"Population",
-		"Community",
-		"Ecosystem",
-		"Biome",
-		"Biosphere"
-	]],
-	["", "can be accessed in areas where hot springs/geothermal reservoirs are near the surface of the Earth.", "Direct geothermal energy"],
-	["", "utilizes a series of underground pipes, an electric compressor and a heat exchanger to absorb and transfer heat.", "Geothermal heat pumps"],
-	["", "also harness the heat of the Earth through hot water and steam. In these plants, heat is used to generate electricity.", "Geothermal power plants"],
-	["", "Benefits of biodiversity", ["Oxygen", "Clean water", "Food", "Medicine"]],
-	["", "Threat to biodiversity", ["Pollution", "Global climate change", "Exploitation", "Species introduction", "Habitat destruction"]],
-	[-1, "High diversity creates a more stable environment", true],
-	[-1, "• Some scientists estimate that as many as 3 species per hour are going extinct and 20,000 extinctions occur each year.", true],
+var questionDataScience = [
+	// ["", "Harvard Business Review has labeled data science as the ____ career of the 21st century", "sexiest"],
 
-	["", "The smallest part of the environment that supports a distinct flora and fauna;", "Microhabitat"],
-	["", "any species which is vulnerable to becoming endangered in the near future", "Threatened"],
-	["", "any species that is at risk of extinction because of a sudden rapid decrease in its population or a loss of its critical habitat", "Endangered"],
-	["", "any species of animal or plant whose no more individuals are alive anywhere in the world", "Extinct"],
-	["", "3 Components of biodiversity",["Diversity of genes", "Diversity of number of species", "Variety of ecosystems"]],
-	["", "Features of Earth’s surface (continents, rocks, sea floor, and everything below Earth’s surface", "lithosphere"],
-	["", "Hydologic Cycle, All of Earth’s water, ice, water vapor", "hydrosphere"],
-	["", "The air blanketing Earth’s solid and liquid surface, It becomes progressively thinner with increasing altitude", "atmosphere"],
-	["", "Three tectonic plate types", ["Transform", "Convergent", "Divergent"]],
-	["", "Three reason why human can cause global change", ["Population Growth", "Industrialization", "Pollution"]],
-	["", "4 Major concern in Biosphere", ["Temperature", "Climate flunctuation", "Greenhouse gases", "Ozone layer"]],
-	["", "It occurs when the environment change too fast, It differ in scale, scope, # of species, It recovery took millions of years", "Mass Extinction"],
-	["", "Why mass extinction happens?", ["hunting", "fishing", "commercial trades", "loss of habitat"]],
-	["", "is a discipline that brings together many fields to attempt to solve biodiversity problems, It develop practical approaches to prevent extinction and destruction of ecosystems", "Conservation biology"],
+	// ["", "It is one of the issue in data science. One way to solve this challenge is by adopting emerging AI-enabled data science technologies like Augmented Analytics and Auto feature engineering. Augmented Analytics automates manual data cleansing and preparation tasks and enables data scientists to be more productive", "Data preparation"],
+	// ["", "It is one of the issue in data science. Organizations need a centralized platform integrated with multiple data sources to instantly access information from multiple sources", "Multiple Source"],
+	// ["", "It is one of the issue in data science. Organizations should utilize advanced machine learning enabled security platforms and instill additional security checks to safeguard their data. At the same time, they must ensure strict adherence to the data protection norms to avoid time-consuming audits and expensive fines.", "Data Security"],
+	// ["", "It is one of the issue in data science. Solution is that data scientists must follow a proper workflow before starting any analysis", "Understanding the business Problem"],
+	// ["", "It is one of the issue in data science. This is something that data scientists can and must practice", "Effective Communication with non-technical stakeholders"],
+	// ["", "It is one of the issue in data science. Solution: Fostering open communication by setting up a common coding language and a real-time collaboration tool.", "Collaboration with engineers"],
 
+	// ["", "Enumerate all data science issues.", [
+	// 	"Data preparation",
+	// 	"Multiple sources",
+	// 	"data security",
+	// 	"Understanding the business Problem",
+	// 	"Effective Communication with non-technical stakeholders",
+	// 	"Collaboration with engineers",
+	// 	"Misconceptions about the role",
+	// 	"Undefined KPIs and Metrics",
+	// 	"The Amount of data being collected",
+	// 	"Collecting meaningful and real-time data",
+	// 	"Visual representation of data",
+	// 	"Inaccessible data",
+	// 	"Poor quality data",
+	// 	"Pressure from the top",
+	// 	"Lack of support",
+	// 	"Budget",
+	// 	"Shortage of skills"
+	// ]],
+	
 
+	// ["", "Design data modelling processes to create algorithms and predictive models and perform custom analysis", "Data scientists"],
+	// ["", "Manipulate large data sets and use them to identify trends and reach meaningful conclusions to inform strategic business decisions", "Data analysts"],
+	// ["", "Clean, aggregate, and organize data from disparate sources and transfer it to data warehouses.", "Data engineers"],
+	// ["", "Identify trends in data sets", "Business intelligence specialists"],
+	// ["", "Design, create, and manage an organization’s data architecture", "Data architects"],
+
+	// ["", "Enumerate all Common Data Scientist Job Titles", [
+	// 	"Data scientists",
+	// 	"Data analysts",
+	// 	"Data engineers",
+	// 	"Business intelligence specialists",
+	// 	"Data architects"
+	// ]],
+
+	// ["", "Identify patterns in data. This includes having a keen sense of pattern detection and anomaly detection.", "Statistical Analysis"],
+	// ["", "Implement algorithms and statistical models to enable a computer to automatically learn from data", "Machine learning"],
+	// ["", "Apply the principles of artificial intelligence, database systems, human/computer interaction, numerical analysis, and software engineering.", "Computer Science"],
+	// ["", "Write computer programs and analyze large datasets to uncover answers to complex problems. Data scientists need to be comfortable writing code working in a variety of languages such as Java, R, Python, and SQL.", "Programming"],
+	// ["", "Communicate actionable insights using data, often for a non-technical audience.", "Data storytelling"],
+
+	// ["", "Enumerate all essetial skills use in Data Science", [
+	// 	"Statistical Analysis",
+	// 	"Machine learning",
+	// 	"Computer Science",
+	// 	"Programming",
+	// 	"Data storytelling"
+	// ]],
+
+	// ["", "Connect with stakeholders to gain a full understanding of the problems they’re looking to solve.", "Business Intuition"],
+	// ["", "Find analytical solutions to abstract business issues.", "Analytical thinking"],
+	// ["", "Apply objective analysis of facts before coming to a conclusion.", "Critical thinking"],
+	// ["", "Look beyond what’s on the surface to discover patterns and solutions within the data.", "Inquisitiveness"],
+	// ["", "Communicate across a diverse audience across all levels of an organization", "Interpersonal skills"],
+	// ["", "Enumerate all soft skills needeed", [
+	// 	"Business Intuition",
+	// 	"Analytical thinking",
+	// 	"Critical thinking",
+	// 	"Inquisitiveness",
+	// 	"Interpersonal skills"
+	// ]],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/BarPlot.svg", "Bar Plot"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/BoxPlot.svg", "Box Plot"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/AggregateColumns.svg", "Aggregate Columns"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/CSVFile.svg", "CSV File Import"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Category-Data.svg", "Data Table"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Colors.svg", "Color"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Concatenate.svg", "Concatenate"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Continuize.svg", "Continuize"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/CreateClass.svg", "Create Class"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/CreateInstance.svg", "Create Instance"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/DataInfo.svg", "Data Info"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/DataSampler.svg", "Data Sampler"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/DataSets.svg", "Datasets"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Discretize.svg", "Discretize"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/EditDomain.svg", "Edit Domain"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/FeatureConstructor.svg", "Feature Constructor"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/FeatureStatistics.svg", "Feature Statistics"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/GroupBy.svg", "Group By"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Impute.svg", "Impute"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Melt.svg", "Melt"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/MergeData.svg", "Merge Data"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Neighbors.svg", "Neighbors"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Normalize.svg", "Normalize"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Outliers.svg", "Outliers"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/PCA.svg", "PCA"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/PaintData.svg", "Paint Data"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Pivot.svg", "Pivot Table"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Preprocess.svg", "Preprocess"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/PurgeDomain.svg", "Purge Domain"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Random.svg", "Randomize"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Rank.svg", "Rank"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SQLTable.svg", "SQL Table"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Save.svg", "Save Data"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SelectByDataIndex.svg", "Select By Data Index"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SelectColumns.svg", "Select Columns"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SelectColumnsRandom.svg", "Select Columns Random"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SelectRows.svg", "Select Rows"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Transform.svg", "Apply Domain"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Transpose.svg", "Transpose"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Unique.svg", "Unique"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/CN2RuleViewer.svg", "CN2 Rule Viewer"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/ScatterPlot.svg", "Scatter Plot"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Distribution.svg", "Distributions"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Freeviz.svg", "FreeViz"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Heatmap.svg", "Heat Map"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/LinePlot.svg", "Line Plot"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/LinearProjection.svg", "Linear Projection"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/MosaicDisplay.svg", "Mosaic Display"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Nomogram.svg", "Nomogram"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/PythagoreanForest.svg", "Pythagorean Forest"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/PythagoreanTree.svg", "Pythagorean Tree"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Radviz.svg", "Radviz"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/SieveDiagram.svg", "Seive Diagram"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/SilhouettePlot.svg", "Silhouette Plot"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/TreeViewer.svg", "Tree Viewer"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/VennDiagram.svg", "Venn Diagram"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/ViolinPlot.svg", "Violin Plot"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/AdaBoost.svg", "AdaBoost"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/CN2RuleInduction.svg", "CN2 Rule Induction"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/CalibratedLearner.svg", "Calibrated Learner"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/Constant.svg", "Constant"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/CurveFit.svg", "Curve Fit"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/KNN.svg", "KNN"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/LinearRegression.svg", "Linear Regression"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/LoadModel.svg", "Load Model"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/LogisticRegression.svg", "Logistic Regression"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/NN.svg", "Neural Network"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/NaiveBayes.svg", "Naive Bayes"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/RandomForest.svg", "Random Forest"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/SVM.svg", "SVM"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/SaveModel.svg", "Save Model"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/Stacking.svg", "Stacking"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/Tree.svg", "Tree"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/CalibrationPlot.svg", "Calibration Plot"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/Category-Evaluate.svg", "Confusion Matrix"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/LiftCurve.svg", "Performance Curve"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/Predictions.svg", "Predictions"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/ROCAnalysis.svg", "ROC Analysis"],
+	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/TestLearners1.svg", "Test and Score"],
 ];
+
+
+function saveListToSession() {
+	const jsonList = JSON.stringify(questions);
+	sessionStorage.setItem('myList'    , jsonList);
+	sessionStorage.setItem('maxNumber' , maxNumber);
+	sessionStorage.setItem('currNumber', number);
+	sessionStorage.setItem('reviewMode', reviewMode);
+}
+function setListFromSession() {
+	const jsonList = sessionStorage.getItem('myList');
+	questions = JSON.parse(jsonList);
+	if (sessionStorage.getItem('maxNumber'))
+		maxNumber = sessionStorage.getItem('maxNumber');
+
+	if (sessionStorage.getItem('currNumber'))
+		number    = sessionStorage.getItem('currNumber') - 1;
+
+	if (sessionStorage.getItem('reviewMode'))
+		reviewMode = sessionStorage.getItem('reviewMode') === 'true';
+}
 
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('var')) {
@@ -225,8 +218,16 @@ if (urlParams.has('var')) {
 	else if (varValue == 'acc')  questions = questionsAccounting;
 	else if (varValue == 'env')  questions = questionsEnvi;
 } else {
-	questions = [["", "TEST QUESTION", "TEST"]];
+	if (sessionStorage.getItem('myList')) {
+		setListFromSession();
+		isRandomized = false;
+	}
+	else {
+		questions = questionDataScience;
+		maxNumber = questions.length;
+	}
 }
+
 
 const backResult = document.querySelector(`.backresult`);
 const retryDiv   = document.querySelector(`.result .buttons .resultRetry`);
@@ -260,6 +261,36 @@ const totalDiv     = document.querySelector(`.result .resultTxt`  );
 const incDiv       = document.querySelector(`.result .resultNoInc`);
 const corDiv       = document.querySelector(`.result .resultNoCor`);
 
+let holdControl = false;
+let holdShift   = false;
+document.addEventListener('keydown', function(event) {
+	// console.log(event.key);
+	if (event.key === 'Control') holdControl = true;
+	if (event.key === 'Shift'  ) holdShift = true;
+	if (holdControl) {
+		// console.log(holdShift);
+		if (holdShift) {
+			if (event.key === 'ArrowRight') {
+				if (!(maxNumber >= questions.length))
+					maxNumber++;
+				qT.textContent = "Question " + (number+1) + " - " + (Math.min(maxNumber, questions.length));
+			}
+			if (event.key === 'ArrowLeft' ) {
+				if (maxNumber > 1 && number+1 < maxNumber )
+					maxNumber--;
+				qT.textContent = "Question " + (number+1) + " - " + (Math.min(maxNumber, questions.length));
+			}
+		} else {
+			if      (event.key === 'ArrowRight') next();
+			else if (event.key === 'ArrowLeft' ) prev();
+		}
+	}
+});
+document.addEventListener('keyup', function(event) {
+	if (event.key === 'Control') holdControl = false;
+	if (event.key === 'Shift'  ) holdShift = false;
+});
+
 const nextDiv = document.querySelector(".topNav .nextDiv")
 nextDiv.addEventListener('click', () => { next(); });
 const prevDiv = document.querySelector(".topNav .prevDiv")
@@ -273,6 +304,20 @@ for (let i = 0; i < arrayTrueFalse.length; i++) { arrayTrueFalse[i].addEventList
 
 const allSelec = document.querySelectorAll(".selection div");
 const allSelecTrueFalse = document.querySelectorAll(".true-false div");
+
+function updateQuestion(question) {
+	var imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+	var isImagePath = imageExtensions.some(function(ext) {
+		return question.toLowerCase().endsWith(ext);
+	});
+	if (isImagePath) {
+		qQ.style.backgroundImage = 'url("' + question + '")';
+		qQ.textContent = '';
+	} else {
+		qQ.style.backgroundImage = '';
+		qQ.textContent = question;
+	}
+}
 
 function clickFunc(ques, index) {
 	if (reviewMode) return;
@@ -306,7 +351,7 @@ function updateQuestionaire() {
 		selectionDiv.style.display = "grid";
 		if ( questions[number][0] >= 0) arrayChoice[questions[number][0]].style.backgroundColor = "#FE017F";
 
-		qQ.textContent = questions[number][1][0];
+		updateQuestion(questions[number][1][0]);
 		qA.textContent = questions[number][2];
 		qB.textContent = questions[number][3];
 		qC.textContent = questions[number][4];
@@ -324,7 +369,7 @@ function updateQuestionaire() {
 			else { arrayChoice.forEach(e => { e.style.backgroundColor = "#FF193E"; }); }
 
 			const answerChar = questions[number][1][1];
-			     if (answerChar == "A") qA.style.backgroundColor = "#77ff43";
+				 if (answerChar == "A") qA.style.backgroundColor = "#77ff43";
 			else if (answerChar == "B") qB.style.backgroundColor = "#77ff43";
 			else if (answerChar == "C") qC.style.backgroundColor = "#77ff43";
 			else if (answerChar == "D") qD.style.backgroundColor = "#77ff43";
@@ -342,7 +387,8 @@ function updateQuestionaire() {
 			trueFalseDiv.style.display = "grid";
 			if ( questions[number][0] >= 0)			
 				arrayTrueFalse[questions[number][0]].style.backgroundColor = "#FE017F";
-			qQ.textContent = questions[number][1];
+
+			updateQuestion(questions[number][1]);
 
 			if (reviewMode) {
 				if ( questions[number][0] >= 0)			
@@ -357,7 +403,7 @@ function updateQuestionaire() {
 
 		} else if (Array.isArray(questions[number][2])) {
 			enumerateDiv.style.display = "grid";
-			qQ.textContent = questions[number][1];
+			updateQuestion(questions[number][1]);
 
 			for (let i = 0; i < enumerateDiv.children.length; i++) {
 				const child = enumerateDiv.children[i];
@@ -402,7 +448,7 @@ function updateQuestionaire() {
 
 			identiFyDiv.style.backgroundColor = "var(--choice-color)";
 			identiFyDiv.value = `${questions[number][0]}`;
-			qQ.textContent = questions[number][1];
+			updateQuestion(questions[number][1]);
 			if (reviewMode) {
 				if (isInArray(identiFyDiv.value, questions[number][2].split("||")))
 					identiFyDiv.style.backgroundColor = "#77ff43"
@@ -415,10 +461,11 @@ function updateQuestionaire() {
 		}
 	}
 
-	qT.textContent        = "Question " + (number+1);
+	qT.textContent        = "Question " + (number+1) + " - " + (Math.min(maxNumber, questions.length));
 	prevDiv.style.display = (number - 1 < 0) ? "none" : "block";
 	nextDiv.textContent   = (number + 1 >= questions.length || number + 1 >= maxNumber) ? "FINISH" : "NEXT";
 	checkScrollable();
+	saveListToSession();
 }
 
 function arraysAreEqual(arr1, arr2) {
@@ -445,7 +492,7 @@ function getRightArray(arr1, arr2) {
 		for (j = 0; j < originalArray.length; j++) {
 			if (isInArray(answerArray[i], originalArray[j].split("||"))) {
 				resultAns.push(answerArray[i]);
-  				originalArray.splice(j, 1);
+				originalArray.splice(j, 1);
 				break;
 			}
 		}
@@ -468,7 +515,7 @@ function finish() {
 	numOfScoreInc    = 0;
 	numOfScoreCor    = 0;
 
-	for (let i = 0; i < questions.length; i++) {
+	for (let i = 0; i < maxNumber; i++) {
 		if (questions[i].length >= 6) {
 			if (numToLetter.get(questions[i][0]) == questions[i][1][1]) { totalScore++; numOfScoreCor++; }
 			else numOfScoreInc++;
@@ -489,7 +536,7 @@ function finish() {
 			}
 		}
 	}
-	totalDiv.textContent = `SCORE: ${totalScore}/${questions.length}`;
+	totalDiv.textContent = `SCORE: ${totalScore}/${maxNumber}`;
 	incDiv.textContent   = `Number of Incorrect: ${numOfScoreInc}`;
 	corDiv.textContent   = `Number of Correct: ${numOfScoreCor}`;
 	backResult.style.display = "block";
@@ -586,6 +633,8 @@ function checkScrollable() {
 
 function start() {
 	if (isRandomized) shuffleArray(questions);
+
+	isRandomized = true;
 	questions.forEach((ques) => {
 		if (ques.length >= 6) {
 			const newIndex = Math.floor(Math.random() * (ques.length - 2));

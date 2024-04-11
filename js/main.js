@@ -37,76 +37,76 @@ let questions = null;
 var questionsWeb = [], questionsAOOP = [], questionsHCI = [], questionsAccounting = [], questionsEnvi = [];
 
 var questionDataScience = [
-	// ["", "Harvard Business Review has labeled data science as the ____ career of the 21st century", "sexiest"],
+	["", "Harvard Business Review has labeled data science as the ____ career of the 21st century", "sexiest"],
 
-	// ["", "It is one of the issue in data science. One way to solve this challenge is by adopting emerging AI-enabled data science technologies like Augmented Analytics and Auto feature engineering. Augmented Analytics automates manual data cleansing and preparation tasks and enables data scientists to be more productive", "Data preparation"],
-	// ["", "It is one of the issue in data science. Organizations need a centralized platform integrated with multiple data sources to instantly access information from multiple sources", "Multiple Source"],
-	// ["", "It is one of the issue in data science. Organizations should utilize advanced machine learning enabled security platforms and instill additional security checks to safeguard their data. At the same time, they must ensure strict adherence to the data protection norms to avoid time-consuming audits and expensive fines.", "Data Security"],
-	// ["", "It is one of the issue in data science. Solution is that data scientists must follow a proper workflow before starting any analysis", "Understanding the business Problem"],
-	// ["", "It is one of the issue in data science. This is something that data scientists can and must practice", "Effective Communication with non-technical stakeholders"],
-	// ["", "It is one of the issue in data science. Solution: Fostering open communication by setting up a common coding language and a real-time collaboration tool.", "Collaboration with engineers"],
+	["", "It is one of the issue in data science. One way to solve this challenge is by adopting emerging AI-enabled data science technologies like Augmented Analytics and Auto feature engineering. Augmented Analytics automates manual data cleansing and preparation tasks and enables data scientists to be more productive", "Data preparation"],
+	["", "It is one of the issue in data science. Organizations need a centralized platform integrated with multiple data sources to instantly access information from multiple sources", "Multiple Source"],
+	["", "It is one of the issue in data science. Organizations should utilize advanced machine learning enabled security platforms and instill additional security checks to safeguard their data. At the same time, they must ensure strict adherence to the data protection norms to avoid time-consuming audits and expensive fines.", "Data Security"],
+	["", "It is one of the issue in data science. Solution is that data scientists must follow a proper workflow before starting any analysis", "Understanding the business Problem"],
+	["", "It is one of the issue in data science. This is something that data scientists can and must practice", "Effective Communication with non-technical stakeholders"],
+	["", "It is one of the issue in data science. Solution: Fostering open communication by setting up a common coding language and a real-time collaboration tool.", "Collaboration with engineers"],
 
-	// ["", "Enumerate all data science issues.", [
-	// 	"Data preparation",
-	// 	"Multiple sources",
-	// 	"data security",
-	// 	"Understanding the business Problem",
-	// 	"Effective Communication with non-technical stakeholders",
-	// 	"Collaboration with engineers",
-	// 	"Misconceptions about the role",
-	// 	"Undefined KPIs and Metrics",
-	// 	"The Amount of data being collected",
-	// 	"Collecting meaningful and real-time data",
-	// 	"Visual representation of data",
-	// 	"Inaccessible data",
-	// 	"Poor quality data",
-	// 	"Pressure from the top",
-	// 	"Lack of support",
-	// 	"Budget",
-	// 	"Shortage of skills"
-	// ]],
+	["", "Enumerate all data science issues.", [
+		"Data preparation",
+		"Multiple sources",
+		"data security",
+		"Understanding the business Problem",
+		"Effective Communication with non-technical stakeholders",
+		"Collaboration with engineers",
+		"Misconceptions about the role",
+		"Undefined KPIs and Metrics",
+		"The Amount of data being collected",
+		"Collecting meaningful and real-time data",
+		"Visual representation of data",
+		"Inaccessible data",
+		"Poor quality data",
+		"Pressure from the top",
+		"Lack of support",
+		"Budget",
+		"Shortage of skills"
+	]],
 	
 
-	// ["", "Design data modelling processes to create algorithms and predictive models and perform custom analysis", "Data scientists"],
-	// ["", "Manipulate large data sets and use them to identify trends and reach meaningful conclusions to inform strategic business decisions", "Data analysts"],
-	// ["", "Clean, aggregate, and organize data from disparate sources and transfer it to data warehouses.", "Data engineers"],
-	// ["", "Identify trends in data sets", "Business intelligence specialists"],
-	// ["", "Design, create, and manage an organization’s data architecture", "Data architects"],
+	["", "Design data modelling processes to create algorithms and predictive models and perform custom analysis", "Data scientists"],
+	["", "Manipulate large data sets and use them to identify trends and reach meaningful conclusions to inform strategic business decisions", "Data analysts"],
+	["", "Clean, aggregate, and organize data from disparate sources and transfer it to data warehouses.", "Data engineers"],
+	["", "Identify trends in data sets", "Business intelligence specialists"],
+	["", "Design, create, and manage an organization’s data architecture", "Data architects"],
 
-	// ["", "Enumerate all Common Data Scientist Job Titles", [
-	// 	"Data scientists",
-	// 	"Data analysts",
-	// 	"Data engineers",
-	// 	"Business intelligence specialists",
-	// 	"Data architects"
-	// ]],
+	["", "Enumerate all Common Data Scientist Job Titles", [
+		"Data scientists",
+		"Data analysts",
+		"Data engineers",
+		"Business intelligence specialists",
+		"Data architects"
+	]],
 
-	// ["", "Identify patterns in data. This includes having a keen sense of pattern detection and anomaly detection.", "Statistical Analysis"],
-	// ["", "Implement algorithms and statistical models to enable a computer to automatically learn from data", "Machine learning"],
-	// ["", "Apply the principles of artificial intelligence, database systems, human/computer interaction, numerical analysis, and software engineering.", "Computer Science"],
-	// ["", "Write computer programs and analyze large datasets to uncover answers to complex problems. Data scientists need to be comfortable writing code working in a variety of languages such as Java, R, Python, and SQL.", "Programming"],
-	// ["", "Communicate actionable insights using data, often for a non-technical audience.", "Data storytelling"],
+	["", "Identify patterns in data. This includes having a keen sense of pattern detection and anomaly detection.", "Statistical Analysis"],
+	["", "Implement algorithms and statistical models to enable a computer to automatically learn from data", "Machine learning"],
+	["", "Apply the principles of artificial intelligence, database systems, human/computer interaction, numerical analysis, and software engineering.", "Computer Science"],
+	["", "Write computer programs and analyze large datasets to uncover answers to complex problems. Data scientists need to be comfortable writing code working in a variety of languages such as Java, R, Python, and SQL.", "Programming"],
+	["", "Communicate actionable insights using data, often for a non-technical audience.", "Data storytelling"],
 
-	// ["", "Enumerate all essetial skills use in Data Science", [
-	// 	"Statistical Analysis",
-	// 	"Machine learning",
-	// 	"Computer Science",
-	// 	"Programming",
-	// 	"Data storytelling"
-	// ]],
+	["", "Enumerate all essetial skills use in Data Science", [
+		"Statistical Analysis",
+		"Machine learning",
+		"Computer Science",
+		"Programming",
+		"Data storytelling"
+	]],
 
-	// ["", "Connect with stakeholders to gain a full understanding of the problems they’re looking to solve.", "Business Intuition"],
-	// ["", "Find analytical solutions to abstract business issues.", "Analytical thinking"],
-	// ["", "Apply objective analysis of facts before coming to a conclusion.", "Critical thinking"],
-	// ["", "Look beyond what’s on the surface to discover patterns and solutions within the data.", "Inquisitiveness"],
-	// ["", "Communicate across a diverse audience across all levels of an organization", "Interpersonal skills"],
-	// ["", "Enumerate all soft skills needeed", [
-	// 	"Business Intuition",
-	// 	"Analytical thinking",
-	// 	"Critical thinking",
-	// 	"Inquisitiveness",
-	// 	"Interpersonal skills"
-	// ]],
+	["", "Connect with stakeholders to gain a full understanding of the problems they’re looking to solve.", "Business Intuition"],
+	["", "Find analytical solutions to abstract business issues.", "Analytical thinking"],
+	["", "Apply objective analysis of facts before coming to a conclusion.", "Critical thinking"],
+	["", "Look beyond what’s on the surface to discover patterns and solutions within the data.", "Inquisitiveness"],
+	["", "Communicate across a diverse audience across all levels of an organization", "Interpersonal skills"],
+	["", "Enumerate all soft skills needeed", [
+		"Business Intuition",
+		"Analytical thinking",
+		"Critical thinking",
+		"Inquisitiveness",
+		"Interpersonal skills"
+	]],
 	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/BarPlot.svg", "Bar Plot"],
 	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/BoxPlot.svg", "Box Plot"],
 	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/AggregateColumns.svg", "Aggregate Columns"],

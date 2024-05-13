@@ -37,155 +37,69 @@ let questions = null;
 var questionsWeb = [], questionsAOOP = [], questionsHCI = [], questionsAccounting = [], questionsEnvi = [];
 
 var questionDataScience = [
-	["", "Harvard Business Review has labeled data science as the ____ career of the 21st century", "sexiest"],
+	["", "A scheduling where the CPU cannot be taken away from its currently executing process", "Non-Preemptive scheduling"],
+	["", "A scheduling where the CPU can be taken away from its currently executing process", "Preemptive scheduling"],
+	["", "The CPU must be busy doing useful work at all times.", "CPU utilization"],
+	["", "The amount of work done by the CPU should be maximized.", "Throughput"],
+	["", "The time between the point a process is submitted and the time it finishes executing is minimized", "Turnaround time"],
+	["", "The time between the submission of a request and the start of the system’s first response is minimized.", "Response time"],
+	["", "The time a process has to spend inside the ready queue waiting to be executed by the CPU is minimized.", "Waiting time"],
+	["", "All processes will be given equal opportunity to use the CPU", "Fairness"],
 
-	["", "It is one of the issue in data science. One way to solve this challenge is by adopting emerging AI-enabled data science technologies like Augmented Analytics and Auto feature engineering. Augmented Analytics automates manual data cleansing and preparation tasks and enables data scientists to be more productive", "Data preparation"],
-	["", "It is one of the issue in data science. Organizations need a centralized platform integrated with multiple data sources to instantly access information from multiple sources", "Multiple Source"],
-	["", "It is one of the issue in data science. Organizations should utilize advanced machine learning enabled security platforms and instill additional security checks to safeguard their data. At the same time, they must ensure strict adherence to the data protection norms to avoid time-consuming audits and expensive fines.", "Data Security"],
-	["", "It is one of the issue in data science. Solution is that data scientists must follow a proper workflow before starting any analysis", "Understanding the business Problem"],
-	["", "It is one of the issue in data science. This is something that data scientists can and must practice", "Effective Communication with non-technical stakeholders"],
-	["", "It is one of the issue in data science. Solution: Fostering open communication by setting up a common coding language and a real-time collaboration tool.", "Collaboration with engineers"],
-
-	["", "Enumerate all data science issues.", [
-		"Data preparation",
-		"Multiple sources",
-		"data security",
-		"Understanding the business Problem",
-		"Effective Communication with non-technical stakeholders",
-		"Collaboration with engineers",
-		"Misconceptions about the role",
-		"Undefined KPIs and Metrics",
-		"The Amount of data being collected",
-		"Collecting meaningful and real-time data",
-		"Visual representation of data",
-		"Inaccessible data",
-		"Poor quality data",
-		"Pressure from the top",
-		"Lack of support",
-		"Budget",
-		"Shortage of skills"
-	]],
-	
-
-	["", "Design data modelling processes to create algorithms and predictive models and perform custom analysis", "Data scientists"],
-	["", "Manipulate large data sets and use them to identify trends and reach meaningful conclusions to inform strategic business decisions", "Data analysts"],
-	["", "Clean, aggregate, and organize data from disparate sources and transfer it to data warehouses.", "Data engineers"],
-	["", "Identify trends in data sets", "Business intelligence specialists"],
-	["", "Design, create, and manage an organization’s data architecture", "Data architects"],
-
-	["", "Enumerate all Common Data Scientist Job Titles", [
-		"Data scientists",
-		"Data analysts",
-		"Data engineers",
-		"Business intelligence specialists",
-		"Data architects"
+	["", "Performance criteria of a good scheduler:", [
+		"CPU Utilization",
+		"Throughput",
+		"Turnaround time",
+		"Response time",
+		"Waiting time",
+		"Fairness"
 	]],
 
-	["", "Identify patterns in data. This includes having a keen sense of pattern detection and anomaly detection.", "Statistical Analysis"],
-	["", "Implement algorithms and statistical models to enable a computer to automatically learn from data", "Machine learning"],
-	["", "Apply the principles of artificial intelligence, database systems, human/computer interaction, numerical analysis, and software engineering.", "Computer Science"],
-	["", "Write computer programs and analyze large datasets to uncover answers to complex problems. Data scientists need to be comfortable writing code working in a variety of languages such as Java, R, Python, and SQL.", "Programming"],
-	["", "Communicate actionable insights using data, often for a non-technical audience.", "Data storytelling"],
+	["", "Is said to have occurred since the final output is dependent on the sequence or time of events; undesirable situation that occurs when a device or system attempts to perform two or more operations at the same time, but because of the nature of the device or system, the operations must be done in the proper sequence to be done correctly", "Race condition||race hazard"],
+	["", "When a process contains the instructions that access a shared resource.", "Critical section"],
 
-	["", "Enumerate all essetial skills use in Data Science", [
-		"Statistical Analysis",
-		"Machine learning",
-		"Computer Science",
-		"Programming",
-		"Data storytelling"
+	["", "requirement should always be met in order to guarantee that only one process may enter its critical section at a time.", "Mutual exclusion"],
+	["", "requirement that must guarantee that if a process wants to enter its critical section and no other process is in its critical section, the process will be able to execute in its critical section.", "Progress"],
+	["", "requirement that must guarantee that processes will not wait for an indefinite amount of time before it can enter its critical section.", "Bounded waiting"],
+
+	["", "Solution for race condition problem involves:", [
+		"Mutual exclusion",
+		"Progress",
+		"Bounded waiting"
 	]],
 
-	["", "Connect with stakeholders to gain a full understanding of the problems they’re looking to solve.", "Business Intuition"],
-	["", "Find analytical solutions to abstract business issues.", "Analytical thinking"],
-	["", "Apply objective analysis of facts before coming to a conclusion.", "Critical thinking"],
-	["", "Look beyond what’s on the surface to discover patterns and solutions within the data.", "Inquisitiveness"],
-	["", "Communicate across a diverse audience across all levels of an organization", "Interpersonal skills"],
-	["", "Enumerate all soft skills needeed", [
-		"Business Intuition",
-		"Analytical thinking",
-		"Critical thinking",
-		"Inquisitiveness",
-		"Interpersonal skills"
+	["", "is the main problem with all the software solutions to critical section problem; the other processes that are waiting to execute their critical section will be stuck in while loop of their problems.", "Busy waiting"],
+	["", "feature enables a process to disable interrupts before it starts modifying a shared variable.", "Disabling interrupts"],
+	["", "a special machine instruction that will allow a process to modify a variable or memory location atomically", "Special hardware instruction"],
+	["", "Hardware solutions to the critical section problem:", [
+		"Disabling interrupts",
+		"Special hardware instruction"
 	]],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/BarPlot.svg", "Bar Plot"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/BoxPlot.svg", "Box Plot"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/AggregateColumns.svg", "Aggregate Columns"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/CSVFile.svg", "CSV File Import"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Category-Data.svg", "Data Table"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Colors.svg", "Color"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Concatenate.svg", "Concatenate"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Continuize.svg", "Continuize"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/CreateClass.svg", "Create Class"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/CreateInstance.svg", "Create Instance"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/DataInfo.svg", "Data Info"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/DataSampler.svg", "Data Sampler"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/DataSets.svg", "Datasets"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Discretize.svg", "Discretize"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/EditDomain.svg", "Edit Domain"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/FeatureConstructor.svg", "Feature Constructor"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/FeatureStatistics.svg", "Feature Statistics"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/GroupBy.svg", "Group By"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Impute.svg", "Impute"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Melt.svg", "Melt"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/MergeData.svg", "Merge Data"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Neighbors.svg", "Neighbors"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Normalize.svg", "Normalize"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Outliers.svg", "Outliers"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/PCA.svg", "PCA"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/PaintData.svg", "Paint Data"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Pivot.svg", "Pivot Table"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Preprocess.svg", "Preprocess"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/PurgeDomain.svg", "Purge Domain"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Random.svg", "Randomize"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Rank.svg", "Rank"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SQLTable.svg", "SQL Table"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Save.svg", "Save Data"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SelectByDataIndex.svg", "Select By Data Index"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SelectColumns.svg", "Select Columns"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SelectColumnsRandom.svg", "Select Columns Random"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/SelectRows.svg", "Select Rows"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Transform.svg", "Apply Domain"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Transpose.svg", "Transpose"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/data/icons/Unique.svg", "Unique"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/CN2RuleViewer.svg", "CN2 Rule Viewer"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/ScatterPlot.svg", "Scatter Plot"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Distribution.svg", "Distributions"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Freeviz.svg", "FreeViz"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Heatmap.svg", "Heat Map"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/LinePlot.svg", "Line Plot"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/LinearProjection.svg", "Linear Projection"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/MosaicDisplay.svg", "Mosaic Display"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Nomogram.svg", "Nomogram"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/PythagoreanForest.svg", "Pythagorean Forest"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/PythagoreanTree.svg", "Pythagorean Tree"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/Radviz.svg", "Radviz"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/SieveDiagram.svg", "Seive Diagram"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/SilhouettePlot.svg", "Silhouette Plot"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/TreeViewer.svg", "Tree Viewer"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/VennDiagram.svg", "Venn Diagram"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/visualize/icons/ViolinPlot.svg", "Violin Plot"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/AdaBoost.svg", "AdaBoost"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/CN2RuleInduction.svg", "CN2 Rule Induction"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/CalibratedLearner.svg", "Calibrated Learner"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/Constant.svg", "Constant"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/CurveFit.svg", "Curve Fit"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/KNN.svg", "KNN"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/LinearRegression.svg", "Linear Regression"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/LoadModel.svg", "Load Model"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/LogisticRegression.svg", "Logistic Regression"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/NN.svg", "Neural Network"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/NaiveBayes.svg", "Naive Bayes"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/RandomForest.svg", "Random Forest"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/SVM.svg", "SVM"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/SaveModel.svg", "Save Model"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/Stacking.svg", "Stacking"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/model/icons/Tree.svg", "Tree"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/CalibrationPlot.svg", "Calibration Plot"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/Category-Evaluate.svg", "Confusion Matrix"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/LiftCurve.svg", "Performance Curve"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/Predictions.svg", "Predictions"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/ROCAnalysis.svg", "ROC Analysis"],
-	["", "https://raw.githubusercontent.com/biolab/orange3/38bedb11033fd36e4cf6c52db25e29860587696f/Orange/widgets/evaluate/icons/TestLearners1.svg", "Test and Score"],
+	["", "a tool used to solve more complex synchronization problems and does not use busy waiting; a special integer variable that is protected.", "Semaphore"],
+	["", "represents the processes and the use of limited resources.", "The dining philosophers problem"],
+	["", "happens when two or more processes are waiting for resources held by each other before it can proceed with its execution", "deadlock"],
+	["", "represents access to a database where readers are processes that only examine or read data stored in a database while writers have exclusive access to the database and they can modify or update data.", "The readers and writers problem"],
+	["", "Classic Synchronization Problem", [
+		"The Dining Philosophers Problem",
+		"Deadlock",
+		"The Readers and Writers Problem"
+	]],
+	["", "a directed graph showing the resources held (directed edge from resource to a process) and the resources requested (directed edge from process to a resource) by different processes.", "Resource-allocation graph"],
+	["", "similar to resource allocation graph except that resources are omitted", "Wait-for-graphs"],
+	["", "there must be mutual exclusion in the use of resources; resources are used by only one process at a time.", "Mutual exclusion"],
+	["", "processes hold resources while waiting to acquire other resources.", "Hold and wait"],
+	["", "resources held by processes cannot be forcibly taken away; the process should release it voluntarily", "No preemption"],
+	["", "there must be a circular chain or processes; each process waits for the next process within the chain.", "Circular wait"],
+	["", "Necessary conditions for a deadlock", [
+		"Mutual exclusion",
+		"Hold and wait",
+		"No preemption",
+		"Circular wait"
+	]],
+	["", "implies that all resources within a computer system become shareable. (Removing the ___ condition)", "Mutual exclusion"],
+	["", "implies that a process is not allowed to hold a resource while requesting to use other resources. (Removing the ___ condition)", "Hold and wait"],
+	["", "implies that a process may be stopped anytime and its resources be taken away from it. (Removing the ___ condition)", "No preemption"],
+	["", "can be removed by forcing processes to request resources in a predefined order and a way to do this is to assign each resource a unique integer value. (Removing the ___ condition)", "Circular wait"],
 ];
 
 
@@ -196,6 +110,7 @@ function saveListToSession() {
 	sessionStorage.setItem('currNumber', number);
 	sessionStorage.setItem('reviewMode', reviewMode);
 }
+
 function setListFromSession() {
 	const jsonList = sessionStorage.getItem('myList');
 	questions = JSON.parse(jsonList);
@@ -218,7 +133,7 @@ if (urlParams.has('var')) {
 	else if (varValue == 'acc')  questions = questionsAccounting;
 	else if (varValue == 'env')  questions = questionsEnvi;
 } else {
-	if (sessionStorage.getItem('myList')) {
+	if (false && sessionStorage.getItem('myList')) {
 		setListFromSession();
 		isRandomized = false;
 	}

@@ -1,41 +1,53 @@
-
 #loading-screen {
-	display         : none;
-	position        : fixed;
-	top             : 0;
-	left            : 0;
-	width           : 100vw;
-	height          : 100vh;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.7);
-	z-index         : 9999;
-	justify-content : center;
-	align-items     : center;
-	flex-direction  : column;
-	color           : white;
-	font-family     : 'HandMade';
-	font-weight     : bold;
-	font-size       : 1.5rem;
+	z-index: 9999;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+	font-family: "HandMade";
+	font-weight: bold;
+	font-size: 1.5rem;
 }
 
+.setting {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 2rem;
+	font-family: "HandMade";
+	color: white;
+	cursor: pointer;
+	user-select: none;
+}
+.setting:hover {
+	color: #ccc;
+}
 .spinner {
-	border         : 4px solid rgba(255, 255, 255, 0.3);
-	border-top     : 4px solid #3498db;
-	border-radius  : 50%;
-	width          : 40px;
-	height         : 40px;
-	animation      : spin 1s linear infinite;
+	border: 4px solid rgba(255, 255, 255, 0.3);
+	border-top: 4px solid #3498db;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	animation: spin 1s linear infinite;
 }
 
 .selection {
 	display: grid;
 	grid-template-rows: repeat(4, 1fr);
-	row-gap   : 20px;
-	position  : relative;
-	max-width : 700px;
+	row-gap: 20px;
+	position: relative;
+	max-width: 700px;
 	min-height: 340px;
-	height    : auto;
-	width     : 90vw;
-	left      : 50vw;
+	height: auto;
+	width: 90vw;
+	left: 50vw;
 
 	margin-top: 20px;
 	transform: translateX(-50%);
@@ -47,15 +59,15 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 20px;
-	position  : relative;
-	max-width : 700px;
-	height    : 100px;
-	width     : 90vw;
-	left      : 50vw;
+	position: relative;
+	max-width: 700px;
+	height: 100px;
+	width: 90vw;
+	left: 50vw;
 
 	margin-top: 20px;
 	margin-bottom: 200px;
-	transform : translateX(-50%);
+	transform: translateX(-50%);
 
 	display: none;
 }
@@ -63,66 +75,66 @@
 .enumeration {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows   : repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
 	column-gap: 20px;
-	row-gap   : 20px;
-	position  : relative;
-	max-width : 700px;
-	height    : auto;
-	width     : 90vw;
-	left      : 50vw;
+	row-gap: 20px;
+	position: relative;
+	max-width: 700px;
+	height: auto;
+	width: 90vw;
+	left: 50vw;
 
 	margin-top: 20px;
 	margin-bottom: 100px;
-	transform : translateX(-50%);
+	transform: translateX(-50%);
 	display: none;
 }
 
 .enumeration input {
-	position  : relative;
-	height    : 50px;
-	width     : 98%;
+	position: relative;
+	height: 50px;
+	width: 98%;
 
-	outline         : none;
-	border          : none;
-	border-radius   : 20px;
-	text-indent     : 5px;
+	outline: none;
+	border: none;
+	border-radius: 20px;
+	text-indent: 5px;
 	background-color: var(--choice-color);
 
-	display        : flex;
-	font-size      : var(--font-size);
-	font-family    : 'HandMade';
-	align-items    : center;
+	display: flex;
+	font-size: var(--font-size);
+	font-family: "HandMade";
+	align-items: center;
 	justify-content: center;
-	caret-color    : white;
+	caret-color: white;
 	border: 2px solid white;
 
 	display: none;
 }
 
 .identification {
-	position  : relative;
-	max-width : 700px;
+	position: relative;
+	max-width: 700px;
 	min-height: 50px;
-	height    : auto;
-	width     : 90vw;
-	left      : 50vw;
+	height: auto;
+	width: 90vw;
+	left: 50vw;
 	margin-top: 20px;
 	margin-bottom: 200px;
-	transform : translateX(-50%);
+	transform: translateX(-50%);
 
-	outline         : none;
-	border          : none;
-	border-radius   : 20px;
-	text-indent     : 20px;
-	caret-color     : white;
+	outline: none;
+	border: none;
+	border-radius: 20px;
+	text-indent: 20px;
+	caret-color: white;
 	background-color: var(--choice-color);
 	border: 2px solid white;
 
-	display        : flex;
-	font-size      : var(--font-size);
-	font-family    : 'HandMade';
-	align-items    : center;
+	display: flex;
+	font-size: var(--font-size);
+	font-family: "HandMade";
+	align-items: center;
 	justify-content: center;
 
 	display: none;
@@ -136,24 +148,24 @@
 
 .selection div,
 .true-false div {
-	padding         : 2px;
-	position        : relative;
-	border-radius   : 20px;
-	min-height      : 50px;
-	height          : auto;
+	padding: 2px;
+	position: relative;
+	border-radius: 20px;
+	min-height: 50px;
+	height: auto;
 	background-color: var(--choice-color);
 
-	display        : flex;
-	font-size      : calc(var(--font-size) - 0.2rem);
-	font-family    : 'HandMade';
-	align-items    : center;
+	display: flex;
+	font-size: calc(var(--font-size) - 0.2rem);
+	font-family: "HandMade";
+	align-items: center;
 	justify-content: center;
 	text-align: center;
 	cursor: pointer;
 	border: 2px solid white;
 }
 
-.selection  div:hover,
+.selection div:hover,
 .true-false div:hover,
 .identification:hover,
 .enumeration input:hover {
@@ -162,22 +174,22 @@
 }
 
 .backresult {
-	display : none;
+	display: none;
 	position: absolute;
-	width   : 100vw;
-	height  : 100vh;
-	top     : 0px;
-	left    : 0px;
+	width: 100vw;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
 	background-color: #00000055;
 }
 
 .result {
 	position: absolute;
-	max-width : 400px;
-	height    : 220px;
-	width     : 90vw;
-	left      : 50vw;
-	top       : 50vh;
+	max-width: 400px;
+	height: 220px;
+	width: 90vw;
+	left: 50vw;
+	top: 50vh;
 
 	border-radius: 20px;
 
@@ -187,18 +199,18 @@
 }
 
 .result div {
-	display        : flex;
-	align-items    : center;
+	display: flex;
+	align-items: center;
 	justify-content: center;
-	font-size      : calc(var(--font-size) - 0.2rem);
-	font-family    : 'HandMade';
+	font-size: calc(var(--font-size) - 0.2rem);
+	font-family: "HandMade";
 }
 
 .result .resultTxt {
-	position: relative; 
+	position: relative;
 	width: 100%;
 	height: 50px;
-	background-color: #FE017F;
+	background-color: #fe017f;
 	border-radius: 20px;
 	margin-bottom: 10px;
 }
@@ -211,7 +223,7 @@
 	margin-left: 10px;
 	width: 100%;
 	height: 40px;
-	border-radius: 20px;	
+	border-radius: 20px;
 }
 
 .result .buttons {
@@ -225,56 +237,60 @@
 }
 
 .result .buttons div {
-	border-radius   : 20px;
+	border-radius: 20px;
 	background-color: var(--choice-color);
 
-	display        : flex;
-	font-size      : calc(var(--font-size) - 0.2rem);
-	font-family    : 'HandMade';
-	align-items    : center;
+	display: flex;
+	font-size: calc(var(--font-size) - 0.2rem);
+	font-family: "HandMade";
+	align-items: center;
 	justify-content: center;
 	cursor: pointer;
 }
 
 .result .buttons div:hover {
-	background-color: #FE017F;
+	background-color: #fe017f;
 }
 
 .credits {
-	position  : fixed;
-	height    : 50px;
-	width     : 100vw;
-	bottom    : 0;
+	position: fixed;
+	height: 50px;
+	width: 100vw;
+	bottom: 0;
 	margin-top: 100px;
-	background-color: #FE017F;
+	background-color: #fe017f;
 }
 
 @keyframes spin {
-	0%   { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 .heart-container {
 	position: absolute;
-	max-width : 700px;
-	width     : 90vw;
-	height    : 140px;
+	max-width: 700px;
+	width: 90vw;
+	height: 140px;
 
-	top       : 0px;
-	left      : 50vw;
+	top: 0px;
+	left: 50vw;
 	transform: translateX(-50%);
 }
 
 .heart {
 	position: absolute;
-	width : 110px;
+	width: 110px;
 	height: 110px;
 
-	top   : 10px;
+	top: 10px;
 	filter: drop-shadow(0 0 10px white);
 
 	transform: rotate(-25deg);
-	background: url('../assets/heart.png') center/cover no-repeat;
+	background: url("../assets/heart.png") center/cover no-repeat;
 }
 
 @media (max-width: 800px) {
@@ -285,7 +301,7 @@
 
 @media (max-width: 600px) {
 	:root {
-		--font-size : 1.2rem;
+		--font-size: 1.2rem;
 	}
 	.result div,
 	.result .buttons div {
@@ -295,7 +311,7 @@
 		border-radius: 10%;
 	}
 	.heart {
-		width : 80px;
+		width: 80px;
 		height: 80px;
 	}
 }
